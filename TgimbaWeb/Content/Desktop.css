@@ -1,0 +1,456 @@
+﻿.BucketDisplayCenter {
+    width:100%;
+    margin:auto;
+    font-family:Arial;
+}
+.ParentBody{
+    width:100%;
+    margin:auto;
+    font-family:Arial;
+    background-color:white;
+}
+.DashboardSpan {
+    width:100%;
+    height:30%;
+    margin:auto;
+    font-family:Arial;
+}
+.DashboardPartSpan {
+    width:30%;
+    height:30%;
+    margin:auto;
+    font-family:Arial;
+}
+.DashboardTotalUsers{
+    width:10%;
+    height:30%;
+    margin:auto;
+    font-family:Arial;
+}
+.Header {text-align: center; 
+        background-color:white; 
+        color:black;
+        border: solid 1px #91A0C3;
+        font-size:larger;
+        font-family:Arial;
+}
+.Body {font-size:larger;
+        font-family:Arial; 
+}
+.Footer {text-align: center; 
+        background-color:white; 
+        color:black;
+        font-size:x-small;
+        font-family:Arial;   
+}
+.Html5JqueryBody { background-color:white;
+    width:100%;
+    margin:auto;
+    font-size:large;
+    font-family:Arial;
+}
+.SortDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;       
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+}
+.hiddenField {
+    display:none;
+}
+.PageDisplay {
+    display:none;
+    font-family:Arial;
+}
+.MenuDisplay {
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-family:Arial;
+}
+.MenuDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+}
+.OptionsDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-family:Arial;
+}
+.OptionsDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+}
+.SearchItemDisplay{
+    width:100%;
+    text-align:center;
+    font-size:large;
+    font-family:Arial;
+}
+.SearchCriteriaDisplay{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.SearchItemDisplayTable{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.SearchResultsMobileDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.SearchResultsDisplayMobileTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.AddItemDesktopDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.BucketListItemDesktopDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.AddItemDisplay{
+    width:100%;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.BucketListItemDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.LoginDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.AddBIButtons {
+    width:100%;
+    display: none;
+    text-align:center;
+}
+.LoginInputBoxes {
+    width:100%;
+    text-align:center;
+}
+.LoginButtons {
+    width:100%;
+    text-align:center;
+}
+.EditBIButtons {
+    width:100%;
+    display: none;
+    text-align:center;
+}
+.Content { background-color:white;
+        color:black; 
+        font-size:large;
+        font-family:Arial;
+}
+.Header select { font-size:large;
+    font-family:Arial;
+}
+.Footer select {font-size:large;
+    font-family:Arial;
+}
+.Body select {
+    font-family:Arial;
+}
+.Content select {
+    font-family:Arial;
+}
+.BLButtonMenu {
+    background-color:#00AA50;
+    color:white;
+    width:200px;
+    border: 0;
+    font-size:large;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonDelete {
+    background-color:#00AA50;
+    font-family:Arial;
+    color:white;
+    border: 0;
+    -webkit-appearance: none;
+}
+.BLItemCellParentTdRight {text-align:right;
+    width:50%;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLItemCellParentTdLeft {text-align:left;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLItemCell {display:table-cell;
+              width:150px;
+    font-family:Arial;
+    -webkit-appearance: none;
+    }
+.BLButton {background-color:#00AA50;
+    color:white;
+    border: 0;
+    font-size:larger;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonDelete {
+    background:#00AA50 url('/Content/image/Delete32.jpg') no-repeat;
+    border: 0;
+    height:32px;
+    width:32px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonEdit {
+    background:#00AA50 url('/Content/image/pencil32.jpg') no-repeat;
+    border: 0;
+    height:32px;
+    width:32px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonColdFilter{
+    background:#00AA50 url('/Content/image/Cold_Filter.jpg') no-repeat;
+        background-color:white;
+        background-position:Center; 
+    border:1;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonClearFilter{
+    background:#00AA50 url('/Content/image/Clear_Filter.jpg') no-repeat;
+        background-color:white;
+        background-position:Center; 
+    border:1;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonHotFilter{
+    background:#00AA50 url('/Content/image/Hot_Filter.jpg') no-repeat;
+        background-color:white;
+        background-position:Center; 
+    border:1;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonWarmFilter{
+    background:#00AA50 url('/Content/image/Warm_Filter.jpg') no-repeat;
+        background-color:white;
+        background-position:Center;  
+    border:1;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonEdit {
+    background:#00AA50 url('/Content/image/pencil32.jpg') no-repeat;
+    border: 0;
+    height:32px;
+    width:32px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonHot{
+    background:#00AA50 url('/Content/image/Hot.jpg') no-repeat;
+        background-color:#CBE9EF;
+        background-position:bottom; 
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonWarm{
+    background:#00AA50 url('/Content/image/Warm.jpg') no-repeat;
+        background-color:#CBE9EF;
+        background-position:bottom;  
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.HeaderLabel {
+    font-size:40px;
+}
+.BLButtonCold{
+    background:#00AA50 url('/Content/image/Cold.jpg') no-repeat;
+    background-color:#CBE9EF;
+        background-position:bottom; 
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.MenuRequestDisplay {
+    width:100%;   
+    height:70px;
+}
+.AddItemButtons{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.MenuSpan {
+    margin:0;
+    padding:0;
+    float:left;
+    height:100px;
+    letter-spacing: -1px;
+    margin-left:auto;
+    width:50%;
+}
+.MenuSpan2 {
+    text-align:center;
+    position:absolute;
+    margin:0;
+    padding:0;
+    float:left;
+    height:100px;
+    letter-spacing: -1px;
+    margin-left:auto;
+    width:25%;
+}
+.BLButtonDesktopMenu {
+    background-color:#00AA50;
+    color:white;
+    border: 0;
+    font-size:larger;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.SearchSpan2 {
+    position:absolute;
+    float:right;
+    left:25%;
+    vertical-align:middle;
+    letter-spacing: -1px;    
+    margin:0;
+    padding:0;
+    background-color:white;
+    width:75%;
+    background-color:#CBE9EF;
+    margin-right:0px;
+}
+.SplitBodyDisplay {    
+    width:100%;   
+    height:350px;
+}
+.MainBodyMenu {
+    text-align:left;
+}
+.MainMenuSpan {
+    vertical-align:top;
+    padding:0;
+    letter-spacing: -1px;
+    width:50%;
+    border:solid;
+    height:50px;
+    border-width:1px;
+}
+.MainBodySpan {
+    width:48%;
+    border:solid;
+    border-width:1px;
+    float:right;
+    margin:0;
+    padding:0;
+    background-color:white;
+    margin-right:0px;
+}
+.SearchSpan {
+    border:solid;
+    border-width:1px;
+    float:right;
+    vertical-align:middle;
+    letter-spacing: -1px;    
+    margin:0;
+    padding:0;
+    background-color:white;
+    margin-right:0px;
+}
+.BLButtonSearch {
+    background:#00AA50 url('/Content/image/SearchV2.jpg') no-repeat;    
+   border: none;
+    height:32px;
+    width:32px;
+    vertical-align:middle;
+}
+.BLSearchText {
+    margin:0;
+    padding:0;
+   border: none;
+    height:30px;
+    width:200px;
+    font-family:Arial;
+    font-size:medium;
+    vertical-align:middle;
+    -webkit-appearance: none;
+}
+.BLSearchText2 {
+    width:200px;
+    font-family:Arial;
+    font-size:larger;
+     background:white url('/Content/image/SearchV2.jpg') no-repeat right 0px center;
+}
+.DeskTopBucketListTable {
+    width:100%;
+}
+.DeskTopBucketListTable td {
+    width:100%;
+ }
+.DesktopTableCell {
+    border-bottom:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    border-top:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:left;
+    font-family:Arial;
+    font-size:large;
+}
+.DesktopTableCellSearch {
+    text-align:center;
+    font-family:Arial;
+    font-size:large;
+}
+

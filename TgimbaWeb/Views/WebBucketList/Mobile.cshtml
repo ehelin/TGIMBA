@@ -1,0 +1,129 @@
+﻿@model TgimbaRestService.Models.BaseModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport" />
+
+    <meta charset="utf-8" />
+    <title>Index</title>
+
+    @Styles.Render("~/Content/Mobile.css")
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/BucketList/Mobile/Display.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Mobile/Events.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Mobile/Global.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/BucketList/Data.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Search.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Session.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/LocalStorage.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Session.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Constants.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Utilities.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Sort.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/ServerCalls.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/BucketList/Login.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var model = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<body class="ParentBody" id="ParentBody" name="ParentBody">
+    <div class="PageDisplay" id="PageDisplay" name="PageDisplay">
+        <div name="LoginDisplay" id="LoginDisplay"></div>
+
+        <div class="MenuDisplay" id="MenuDisplay" name="MenuDisplay">
+            <table class="MenuDisplayTable">
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Add" id="AddBucketListItem" name="AddBucketListItem" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Sort" id="SortBucketListItem" name="SortBucketListItem" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Traveling Salesman" id="TravelingSalesman" name="TravelingSalesman" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Logout" id="LogOut" name="LogOut" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Cancel" id="CancelMenuDisplay" name="CancelMenuDisplay" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="display: none;text-align:center" id="TravelingSalespersonList" name="TravelingSalespersonList">
+            <h2>Traveling Salesperson</h2>
+            <h5>This application consists of:</h5>
+            <p>Bucket List Item #1 - (Latitude/Longitude) - First Item to visit</p>
+            <p>Bucket List Item #2 - (Latitude/Longitude) - Second Item to visit</p>
+            <p>Bucket List Item #3 - (Latitude/Longitude) - Third Item to visit</p>
+            <p>Bucket List Item #4 - (Latitude/Longitude) - Fourth Item to visit</p>
+            <p>Bucket List Item #5 - (Latitude/Longitude) - Five Item to visit</p>
+            <input type="button" class="BLButtonMenu" value="Cancel" id="CancelAlgorithmDisplay" name="CancelAlgorithmDisplay" />
+        </div>
+
+        <div class="OptionsDisplay" id="OptionsDisplay" name="OptionsDisplay">
+            <table class="OptionsDisplayTable">
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Cancel" id="CancelOptionDisplay" name="CancelOptionDisplay" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @{Html.RenderPartial("BucketListAddForm");}
+
+        <div class="SearchResultsMobileDisplay" name="SearchResultsMobileDisplay" id="SearchResultsMobileDisplay"></div>
+        <div class="SortDisplay" name="SortBucketListOptions" id="SortBucketListOptions"></div>
+    </div>
+
+    <div class="Html5JqueryBody" id="Html5JqueryBody" name="Html5JqueryBody">
+        <div class="MenuRequestDisplay" id="MenuRequestDisplay" name="MenuRequestDisplay">
+            <div class="MenuSpan">
+                <input type="button" class="BLButton" value="Menu" id="MenuRequest" name="MenuRequest" />
+            </div>
+            <div class="SearchSpan">
+                <input class="BLSearchText" type="text" id="SearchTerm" name="SearchTerm" />
+                <input type="button" class="BLButtonSearch" id="searchButtonSubmit" name="searchButtonSubmit" value="&nbsp;" />
+            </div>
+        </div>
+
+        <div class="Content" id="Html5JqueryContentDiv" name="Html5JqueryContentDiv">
+            <header class="Header" id="Html5JqueryHeader" name="Html5JqueryHeader">
+                <p id="HeaderLabel" name="HeaderLabel">The Globe In My Bucket (TGIMBA)</p>
+            </header>
+
+            <br />
+
+            <article class="Body" id="Html5JqueryArticleContent" name="Html5JqueryArticleContent">
+                <div style="display: none" name="BucketListDisplay" id="BucketListDisplay" />
+            </article>
+
+            <br />
+
+            <footer class="Footer" id="Html5JqueryFooter" name="Html5JqueryFooter">
+                <p id="FooterLabel" name="FooterLabel">Bucket Globe - Copyright 2015</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

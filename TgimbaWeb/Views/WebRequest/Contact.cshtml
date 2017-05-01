@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+@Styles.Render("~/Content/Desktop.css")
+
+<div class="Html5JqueryBody">
+    <h2>The Globe In My Application (TGIMBA) Contact</h2>
+    <ul>
+        <li>
+            Email
+            <ul>
+                <li><a href="mailto:ehelin@felpsis.net">Email</a></li>
+            </ul>
+        </li>
+        <li>
+            Github
+            <ul>
+                <li><a href="https://github.com/ehelin" target="_blank">Github</a></li>
+            </ul>
+        </li>
+        <li>
+            Linked In
+            <ul>
+                <li><a href="http://www.linkedin.com/pub/eric-helin/20/476/436" target="_blank">Linked In</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+@{Html.RenderPartial("Footer");}

@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "RoadMap";
+}
+
+@Styles.Render("~/Content/Desktop.css")
+
+<div class="Html5JqueryBody">
+    <h2>The Globe In My Application (TGIMBA) Road Map</h2>
+
+    <u>Please Note</u>
+    <ul>
+        <li>
+            I do not specify release dates since this is a fun project for me to explore different
+            technologies/algorithms as well as to allow me to demonstrate technical competence on those
+            technologies/algorithms.  This product can be used for free by anyone as is after they have
+            reviewed the privacy policy.  Releases will be made when they are ready.  I will do my
+            best to keep everything backwards compatible, but I will not promise that a version will
+            be functional forever.
+        </li>
+        <li>
+            Any releases may be limited to the website and/or specific clients depending on implementation
+            details.
+        </li>
+    </ul>
+    <u>Release 1.0.0.0</u>
+    <p>This is actually many previous versions leading up to the current build that I am choosing to make the initial version for this product 
+    (specifically 'c210eb23bbe12976842d58132aae6aaee6ddce13' in Github's commit 
+    list (https://github.com/ehelin/TGIMBA/commits/master)). The first commit to Github.com 
+    was roughly a year ago. Included features:</p>
+    <ul>
+        <li>Website</li>
+        <li>Website Selenium tests</li>
+        <li>Roadmap</li>
+        <li>Global Dashboard on Desktop version of website</li>
+        <li>Demonstration user to allow somebody to experience TGIMBA without creating an account</li>
+        <li>Privacy Policy</li>
+        <li>Windows 8.1 Client (NOTE: This specific client will no longer be upgraded.  Instead, a Windows 10 mobile version will be released and supported)</li>
+        <li>Windows Phone 8.1 Client  (NOTE: This specific client will no longer be upgraded.  Instead, a Windows 10 mobile version will be released and supported)</li>
+        <li>Android Client</li>
+    </ul>
+
+    <u>Release 1.0.0.1</u>
+    <p>This release includes an version page which shows a high-level design.  This page will be updated as appropriate as 
+    new features/versions/fixes are release. TGIMBA documents previously available on www.erichelin.com have been removed with the intend that 
+    any relevant documents will be included here.  Links (if available) will be included to each version's Github.com repository and store location.</p>
+
+    <u>Release 1.0.1.0</u>
+    <p>This release includes Geo-Location options that can be specified for a bucket list item.</p>
+
+    <u>Release 1.1.0.0</u>
+    <p>This is where the real fun begins :)  This release includes an implementation of the Traveling Salesman Algorithm as well as a home grown 
+    Permutation Algoritm as a feature a user can use.  It will allow a user to take up to 10 location bucket list items that have a latitude/longitude specified.  
+    If the user decides to use the feature, it will take the selected location specified bucket list items and provide the shortest path to visit all of them.  Proof 
+    of Concept blog entries are here:</p>
+    <ul>
+        <li><a href="https://erichelin.wordpress.com/2016/06/08/tgimba-automation-the-traveling-salesman-and-permutation-algorithm-proof-of-concept/" target="_blank">Proof of Concept</a></li>
+        <li><a href="https://erichelin.wordpress.com/2016/06/10/tgimba-automation-permutation-algorithm-revisited/" target="_blank">Proof of Concept Revisited</a></li>
+    </ul>
+
+    <u>Release 1.2.0.0</u>
+    <p>This release includes some new features. They are:</p>
+    <ul>
+        <li>Audio commands</li>
+    </ul>
+
+    <u>Release 1.3.0.0</u>
+    <p>This release includes some new features. They are:</p>
+    <ul>
+        <li>Recommendation engine using a graph data structure and database for possible bucket list items for other users</li>
+    </ul>
+
+    <u>Release 1.4.0.0</u>
+    <p>This release includes some new features. They are:</p>
+    <ul>
+        <li>Red-Black binary tree for offline data storage</li>
+    </ul>
+
+    <u>Release 1.5.0.0</u>
+    <p>This release includes some new features. They are:</p>
+    <ul>
+        <li>Virtual Assistant for bucket list</li>
+    </ul>
+
+    <u>Release 1.6.0.0</u>
+    <p>This release includes some new features. They are</p>
+    <ul>
+        <li>Recommendation engine addition - Best way to see a specific bucket list item based on its latitude/longitude</li>
+    </ul>
+
+    <u>Release 2.0.0.0</u>
+    <p>This release is a complete re-write.  Details include:</p>
+    <ul>
+        <li>Updated website-.NET Core</li>
+        <li>Updated website-Vanilla non-Jquery Javascript</li>
+        <li>Updated website-Node.js (backend services)</li>
+        <li>Updated website-use observer pattern on node.js tgimba automation for notfications of some kind</li>
+        <li>Updated website-Dynamo Db (replacing SQL Server)</li>
+    </ul>
+
+    <p>Please note - non-website clients will be unaffected (I think).  If there is a breaking change, release will be deferred until the clients are updated.</p>
+
+    <u>Release 2.0.0.1</u>
+    <p>This release includes (if not part of version 2) these features:</p>
+    <ul>
+        <li>User Management-Added a change password/email function</li>
+        <li>User Management-Allow user to delete account</li>
+        <li>User Management-Added remember me feature to tgimba</li>
+        <li>User Management-Support logins from Facebook, Google and any other relevant systems</li>
+        <li>User Management-Add base authentication call for service access and test</li>
+    </ul>
+
+    <u>Release 2.0.1.0</u>
+    <p>This release includes updated Selenium Tests.</p>
+
+    <u>Release 2.0.2.0</u>
+    <p>This release includes new automated builds using Jenkins, automated unit/integration tests and dependancy injection/mocking.</p>
+
+    <u>Release 2.0.2.0</u>
+    <p>This release includes an upgrade tgimba to sha 2 (http://www.zdnet.com/article/as-sha1-winds-down-sha2-leap-will-leave-millions-stranded/) as well 
+    as the adoption of SSL.</p>
+
+    <u>Release 2.0.3.0</u>
+    <p>This release includes a flashy and color full dashboard showing specifics per user (website).</p>
+
+    <u>Release 2.0.4.0</u>
+    <p>This release includes a flashy and color full dashboard showing specifics per user for all of the other clients.</p>
+
+    <u>Release 2.1.2.0</u>
+    <p>This release includes a new IOS Client.</p>
+
+    <u>Release 2.2.0.0</u>
+    <p>This release includes meta data research options on bucket list item's latitude/longitude. Specifically:</p>
+    <ul>
+        <li>Price averages-Airplane</li>
+        <li>Price averages-Room</li>
+        <li>Price averages-Car Rentals</li>
+        <li>Price averages-Places nearby</li>
+        <li>Price averages-Best time to visit</li>
+    </ul>
+
+    <u>Release 3.0.0.0</u>
+    <p>This release includes an Internet of Things (IOT) and wearable product related to TGIMBA</p>
+
+    <u>Release 3.1.0.0</u>
+    <p>This release includes the ability to upload photos relevant to a bucket list item.</p>
+
+    <u>Release 3.2.0.0</u>
+    <p>This release includes a feature to recognize bucket list items (pre-compiled list made outside of user selections) by photo, 
+    name (text search), map, other methods?</p>
+
+    <u>Release 3.3.0.0</u>
+    <p>This release includes a UNESCO site list options based on a bucket list item's latitude/longitude.</p>
+
+    <u>Release 4.0.0.0</u>
+    <p>A separate tool has been created to monitor TGIMBA and report on any down services/website/etc.</p>
+
+    <u>Release 4.1.0.0</u>
+    <p>Updates to an existing security tool based on a scan of TGIMBA with a yet to be completed list of known security attacks to verify TGIMBA is secure. Relevant 
+    blog entries:</p>
+    <ul>
+        <li><a href="https://erichelin.wordpress.com/2016/03/23/tgimba-security-sql-injection/" target="_blank">SQL Injection</a></li>
+    </ul>
+
+    <u>Release 4.2.0.0</u>
+    <p>This release includes any vunerabilities found from activities related to release 4.1.0.0.</p>
+
+    <u>Release 4.3.0.0</u>
+    <p>This release includes a tool that allows a user to create customizations to TGIMBA using drag and drop components.</p>
+</div>
+
+@{Html.RenderPartial("Footer");}

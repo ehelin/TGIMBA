@@ -1,0 +1,388 @@
+﻿.BucketDisplayCenter {
+    width:100%;
+    margin:auto;
+    font-family:Arial;
+}
+.ParentBody{
+    width:100%;
+    margin:auto;
+    font-family:Arial;
+}
+.importanceCategoryFilter {
+    text-align:left;
+}
+.LoginButtons {
+    width:100%;
+    text-align:center;
+}
+.forum_hover { background-color: #380606; }
+.LoginDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.Header {text-align: center; 
+        background-color:white; 
+        color:black;
+        border: solid 1px #91A0C3;
+        font-size:larger;
+        font-family:Arial;
+}
+.Body {text-align: center; 
+        background-color:white; 
+        color:black;
+        font-size:larger;
+        font-family:Arial;
+}
+.Footer {text-align: center; 
+        background-color:white; 
+        color:black;
+        font-size:x-small;
+        border: solid 1px #91A0C3;
+        font-family:Arial;   
+}
+.Html5JqueryBody { background-color:white;
+    width:100%;
+    margin:auto;
+    font-size:large;
+    font-family:Arial;
+}
+.hiddenField {
+    display:none;
+}
+.PageDisplay {
+    display:none;
+    font-family:Arial;
+}
+.MenuDisplay {
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-family:Arial;
+}
+.SortDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+}
+.SortDisplay {
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-family:Arial;
+}
+.MenuDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+}
+.OptionsDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-family:Arial;
+}
+.OptionsDisplayTable{
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+}
+.SearchItemDisplay{
+    width:100%;
+    text-align:center;
+    font-size:large;
+    font-family:Arial;
+}
+.SearchCriteriaDisplay{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.SearchItemDisplayTable{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.SearchResultsMobileDisplay{
+    width:98%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+    background-color:white;
+    margin-bottom:10px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:10px;
+}
+.SearchResultsDisplayMobileTable{
+    width:98%;
+    text-align:center;
+    font-size:large;
+}
+.AddItemDesktopDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.BucketListItemDesktopDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.AddItemDisplay{
+    width:100%;
+    border:solid;
+    border-width:1px;
+    border-color:#91A0C3;
+    text-align:center;
+    font-size:large;
+}
+.AddItemButtons{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.BucketListItemDisplayTable{
+    width:100%;
+    text-align:center;
+    font-size:large;
+}
+.AddBIButtons {
+    width:100%;
+    display: none;
+    text-align:center;
+}
+.EditBIButtons {
+    width:100%;
+    display: none;
+    text-align:center;
+}
+.Content { background-color:white;
+    color:black; 
+    font-size:large;
+    font-family:Arial;
+}
+.Header select { 
+    font-size:large;
+    font-family:Arial;
+}
+.Footer {text-align: center; 
+        background-color:white; 
+        color:black;
+        font-size:x-small;
+        border:0;
+        font-family:Arial;   
+}
+.Body select {
+    font-family:Arial;
+}
+.Content select {
+    font-family:Arial;
+}
+.BLButtonMenu {
+    background-color:#00AA50;
+    color:white;
+    width:200px;
+    border: 0;
+    font-size:large;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonDelete {
+    background-color:#00AA50;
+    font-family:Arial;
+    color:white;
+    border: 0;
+    -webkit-appearance: none;
+}
+.BLItemCellParentTdRight {text-align:right;
+    width:50%;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLItemCellParentTdLeft {text-align:left;
+    font-family:Arial;
+    -webkit-appearance: none;}
+.BLItemCell {display:table-cell;
+              width:150px;
+    font-family:Arial;
+    -webkit-appearance: none;}
+.BLButton {background-color:#00AA50;
+    color:white;
+    border: 0;
+    font-size:larger;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.RankingOptionSelectionHot{    
+    background:white url('/Content/image/Hot_Mobile.jpg') no-repeat;
+}
+.RankingOptionSelectionWarm{    
+    background:white url('/Content/image/Warm_Mobile.jpg') no-repeat;
+}
+.RankingOptionSelectionCold{    
+    background:white url('/Content/image/Cold_Mobile.jpg') no-repeat;
+}
+.BLButtonDelete {
+    background:#00AA50 url('/Content/image/Delete32.jpg') no-repeat;
+    border: 0;
+    height:22px;
+    width:22px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonEdit {
+    background:#00AA50 url('/Content/image/pencil32.jpg') no-repeat;
+    border: 0;
+    height:22px;
+    width:22px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonDeleteSearch {
+    background:#00AA50 url('/Content/image/Delete32.jpg') no-repeat;
+    background-position:right; 
+    border: 0;
+    height:22px;
+    width:22px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonEditSearch {
+    background:#00AA50 url('/Content/image/pencil32.jpg') no-repeat;
+    background-position:right; 
+    border: 0;
+    height:22px;
+    width:22px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonHot{
+    background:#00AA50 url('/Content/image/Hot_Mobile.jpg') no-repeat;
+    background-color: white;
+        background-position:center; 
+        text-align:right;
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonWarm{
+    background:#00AA50 url('/Content/image/Warm_Mobile.jpg') no-repeat;
+    background-color: white;
+        background-position:center; 
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.BLButtonCold{
+    background:#00AA50 url('/Content/image/Cold_Mobile.jpg') no-repeat;
+    background-color: white;
+        background-position:center; 
+    border:0;
+    height:32px;
+    width:34px;
+    font-family:Arial;
+    -webkit-appearance: none;
+}
+.MenuRequestDisplay {
+    width:100%;   
+    height:40px;
+}
+.MenuSpan {
+    margin:0;
+    padding:0;
+    float:left;
+    height:28px;
+    letter-spacing: -1px;
+    border-color:#91A0C3;
+    margin-left:auto;
+    width:50%;
+}
+.MobileBucketListCellRight {
+    width:20%;
+    vertical-align:central;
+    text-align:left;
+}
+.MobileBucketListCellCenter {
+    width:3%;
+    vertical-align:central;
+    text-align:center;
+}
+.MobileBucketListCellLeft {
+    font-family: Arial;
+    font-size: medium;
+    text-align: left;
+}
+.MobileBucketListCellRightSearch {
+    width:50%;
+    vertical-align:central;
+    text-align:right;
+}
+.MobileBucketListCellCenterSearch {
+    width:50%;
+    vertical-align:central;
+    text-align:center;
+}
+.MobileBucketListCellLeftSearch {
+    font-family:Arial;
+    font-size:medium;
+    text-align:left;
+}
+.SearchSpan {
+    float:right;
+    vertical-align:middle;
+    letter-spacing: -1px;    
+    margin:0;
+    padding:0;
+    background-color:white;
+    margin-right:0px;
+}
+.BLButtonSearch {
+    background:#00AA50 url('/Content/image/SearchV2.jpg') no-repeat;    
+   border: none;
+    height:32px;
+    width:32px;
+    vertical-align:middle;
+}
+.BLSearchText {
+    margin:0;
+    padding:0;
+   border: none;
+    height:30px;
+    width:100px;
+    font-family:Arial;
+    font-size:smaller;
+    vertical-align:middle;
+    -webkit-appearance: none;
+}
+.BLSearchText2 {
+    width:200px;
+    font-family:Arial;
+    font-size:larger;
+     background:white url('/Content/image/SearchV2.jpg') no-repeat right 0px center;
+}
+.DeskTopBucketListTable {
+    width:100%
+}
+.DeskTopBucketListTable td {
+    border: solid 1px #91A0C3;
+ }
+

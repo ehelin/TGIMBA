@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport" />
+
+    <meta charset="utf-8" />
+    <title>Index</title>
+
+    <link href="/Content/Mobile.css" rel="stylesheet" type="text/css" />
+
+    <script src="/Scripts/jquery-1.7.js" type="text/javascript"></script>
+
+    <script src="/Scripts/BucketListApp/Mobile/Global.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Data.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Constants.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Mobile/Display.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Mobile/Events.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Search.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Mobile/Session.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/LocalStorage.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Session.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Mobile/Constants.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Utilities.js" type="text/javascript"></script>
+    <script src="/Scripts/BucketListApp/Sort.js" type="text/javascript"></script> 
+    <script src="/Scripts/BucketListApp/Login.js" type="text/javascript"></script>   
+    <script src="/Scripts/BucketListApp/ServerCalls.js" type="text/javascript"></script>   
+    <script src="/Scripts/jquery-ui.js"></script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<body class="ParentBody" id="ParentBody" name="ParentBody">
+    <div class="PageDisplay" id="PageDisplay" name="PageDisplay">
+        <div name="LoginDisplay" id="LoginDisplay"></div>
+
+        <div class="MenuDisplay" id="MenuDisplay" name="MenuDisplay">
+            <table class="MenuDisplayTable">
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Add" id="AddBucketListItem" name="AddBucketListItem" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Sort" id="SortBucketListItem" name="SortBucketListItem" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Logout" id="LogOut" name="LogOut" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Cancel" id="CancelMenuDisplay" name="CancelMenuDisplay" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="OptionsDisplay" id="OptionsDisplay" name="OptionsDisplay">
+            <table class="OptionsDisplayTable">
+                <tr>
+                    <td>
+                        <input type="button" class="BLButtonMenu" value="Cancel" id="CancelOptionDisplay" name="CancelOptionDisplay" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @{Html.RenderPartial("BucketListAddForm");}
+
+        <div class="SearchResultsMobileDisplay" name="SearchResultsMobileDisplay" id="SearchResultsMobileDisplay"></div>
+        <div class="SortDisplay" name="SortBucketListOptions" id="SortBucketListOptions"></div>
+    </div>
+
+    <div class="Html5JqueryBody" id="Html5JqueryBody" name="Html5JqueryBody">
+        <div class="MenuRequestDisplay" id="MenuRequestDisplay" name="MenuRequestDisplay">    
+                <div class="MenuSpan">
+                    <input type="button" class="BLButton" value="Menu" id="MenuRequest" name="MenuRequest" />
+                </div>        
+                <div class="SearchSpan">
+                    <input class="BLSearchText" type="text" id="SearchTerm" name="SearchTerm" />
+                    <input type="button" class="BLButtonSearch" id="searchButtonSubmit" name="searchButtonSubmit" value="&nbsp;"/>
+                </div>
+        </div>
+
+        <div class="Content" id="Html5JqueryContentDiv" name="Html5JqueryContentDiv">
+            <header class="Header" id="Html5JqueryHeader" name="Html5JqueryHeader">
+                <p id="HeaderLabel" name="HeaderLabel">The Globe In My Bucket (TGIMBA)</p>
+            </header>
+
+            <br />
+
+            <article class="Body" id="Html5JqueryArticleContent" name="Html5JqueryArticleContent">
+                <div style="display: none" name="BucketListDisplay" id="BucketListDisplay" />
+            </article>
+
+            <br />
+
+            <footer class="Footer" id="Html5JqueryFooter" name="Html5JqueryFooter">
+                <p id="FooterLabel" name="FooterLabel">Bucket Globe - Copyright 2015</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

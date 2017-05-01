@@ -1,0 +1,81 @@
+﻿<div class="AddItemDisplay" id="AddItemDisplay" name="AddItemDisplay">
+    <div id="BucketListRecordId" class="hiddenField" name="BucketListRecordId">
+        <input type="text" id="BucketListRecordId" name="BucketListRecordId" />
+    </div>
+    <div name="BucketListItemDisplay" id="BucketListItemDisplay">
+        <table class="BucketListItemDisplayTable">
+            <tr>
+                <td colspan="2">Enter Bucket Item</td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Name</td>
+                <td class="BLItemCellParentTdLeft">
+                    <input type="text" id="BIItemName" name="BIItemName" class="BLItemCell" />
+                </td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Date:</td>
+                <td class="BLItemCellParentTdLeft">
+                    <script type="text/javascript">GetDateTime();</script>
+                    <input type="text" id="BLIDateTime" name="BLIDateTime" class="BLItemCell" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Ranking</td>
+                <td class="BLItemCellParentTdLeft">
+                    <div id="RankingCategoryInput" name="RankingCategoryInput" />
+                </td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Achieved</td>
+                <td class="BLItemCellParentTdLeft">
+                    <div id="AchievedInput" name="AchievedInput" />
+                </td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Latitude</td>
+                <td class="BLItemCellParentTdLeft">
+                    <input type="text" id="BILatitude" name="BILatitude" class="BLItemCell" />
+                </td>
+            </tr>
+            <tr>
+                <td class="BLItemCellParentTdRight">Longitude</td>
+                <td class="BLItemCellParentTdLeft">
+                    <input type="text" id="BILongitude" name="BILongitude" class="BLItemCell" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="AddBIButtons" name="AddBIButtons" id="AddBIButtons">
+                        <table class="AddItemButtons">
+                            <tr>
+                                <td>
+                                    <input type="button" class="BLButtonMenu" value="Submit" id="AddBIButtonSubmit" name="AddBIButtonSubmit" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" class="BLButtonMenu" value="Cancel" id="CancelAddItemDisplay" name="CancelAddItemDisplay" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="EditBIButtons" name="EditBIButtons" id="EditBIButtons">
+                        <table class="AddItemButtons">
+                            <tr>
+                                <td>
+                                    <input type="button" class="BLButtonMenu" value="Submit" id="EditBIButtonSubmit" name="EditBIButtonSubmit" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" class="BLButtonMenu" value="Cancel" id="CancelEditItemDisplay" name="CancelEditItemDisplay" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
