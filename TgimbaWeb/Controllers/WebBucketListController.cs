@@ -22,28 +22,5 @@ namespace TgimbaRestService.Controllers
 
             return View(model);
         }
-
-        //[HttpGet]
-        //public ActionResult Mobile()
-        //{
-        //    //TODO - add logging (if needed)
-        //    //IBucketListData bld = new BucketListData(Utilities.GetDbSetting());
-        //    //IList<string> parameters = new List<string>();
-        //    //parameters.Add("Making Call");
-        //    //CommonCode.Log(null, bld, "BucketListController.Mobile()", parameters);
-
-        //    return View();
-        //}
-        //[HttpGet]
-        //public ActionResult Desktop()
-        //{
-        //    //TODO - add logging (if needed)
-        //    //IBucketListData bld = new BucketListData(Utilities.GetDbSetting());
-        //    //IList<string> parameters = new List<string>();
-        //    //parameters.Add("Making Call");
-        //    //CommonCode.Log(null, bld, "BucketListController.Desktop()", parameters);
-
-        //    return View();
-        //}
     }
 }

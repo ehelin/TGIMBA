@@ -36,6 +36,11 @@ namespace TgimbaRestService.Controllers
         {
             return View();
         }
+        
+        public ActionResult Spanish()
+        {
+            return View();
+        }
 
         public ActionResult DirectRequest()
         {

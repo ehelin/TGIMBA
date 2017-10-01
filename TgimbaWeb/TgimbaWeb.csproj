@@ -262,6 +262,7 @@
     <Content Include="Content\image\Warm_Filter.jpg" />
     <Content Include="Content\image\Warm_Mobile.jpg" />
     <Content Include="Content\Mobile.css" />
+    <Content Include="Content\Spanish.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -314,6 +315,39 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Spanish\Data.js" />
+    <Content Include="Scripts\Spanish\Display.js" />
+    <Content Include="Scripts\Spanish\Events.js" />
+    <Content Include="Scripts\Spanish\Global.js" />
+    <Content Include="Scripts\Spanish\ListsV2.js" />
+    <Content Include="Scripts\Spanish\Lists\FirstList.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_A.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_B.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_C.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_D.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_E.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_F.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_G.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_H.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_I.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_J.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_K.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_L.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_M.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_N.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_O.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_P.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_Q.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_R.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_S.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_T.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_U.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_V.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_W.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_X.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_Y.js" />
+    <Content Include="Scripts\Spanish\Lists\Lists_Z.js" />
+    <Content Include="Scripts\Spanish\LocalStorage.js" />
     <Content Include="Services\BucketListServices.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -340,6 +374,7 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\TravelingSalesperson.cshtml" />
     <Content Include="Views\WebRequest\Contact.cshtml" />
+    <Content Include="Views\WebRequest\Spanish.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
