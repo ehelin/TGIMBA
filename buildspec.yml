@@ -13,7 +13,7 @@ phases:
     commands:
       - echo BUILD Commands --------------------------------------------------
       - echo testing .net classic tgimba
-	  - ls
+	  - dir
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
