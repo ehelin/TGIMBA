@@ -31,6 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{7748B3FF-AF8
 		DashboardSQL.sql = DashboardSQL.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA749F7A-A262-4808-83D0-7FCE3FE7D5A6}"
+	ProjectSection(SolutionItems) = preProject
+		buildspec.yml = buildspec.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
