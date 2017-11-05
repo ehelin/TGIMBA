@@ -14,22 +14,44 @@ function setOptions() {
 function runLogin() {
     console.log('inside runLogin');
 
-    var options = setOptions();
-    console.log('options: ', options);
+    writeToWebConfig('Web.config', '');
 
-    var c = new Client();
+    // var options = setOptions();
+    // console.log('options: ', options);
+    //
+    // var c = new Client();
+    //
+    // c.on('ready', function() {
+    //     c.list(function(err, list) {
+    //         if (err) throw err;
+    //         list.forEach(function(file){
+    //             console.dir(file.name);
+    //         });
+    //         c.end();
+    //     });
+    // });
+    //
+    // c.connect(options);
+}
 
-    c.on('ready', function() {
-        c.list(function(err, list) {
-            if (err) throw err;
-            list.forEach(function(file){
-                console.dir(file.name);
-            });
-            c.end();
-        });
-    });
+function writeToWebConfig(file, entry) {
+    const fileContents = fs.readFileSync(file, 'utf8');
+    const lines = fileContents.split('\n');
 
-    c.connect(options);
+    for (var i=0; i<lines.length; i++) {
+        console.log(line);
+    }
+    // for (const line of lines) {
+    //     console.log(line);
+    //     // if (line.indexOf('import') !== -1) {
+    //     //
+    //     //     for (const errorMatch of errorMatches) {
+    //     //         if (line.indexOf(errorMatch) !== -1 && line.indexOf('@local') === -1) {
+    //     //             throw new Error('cross project reference found - (file/line): (' + file + '/' + line + ')');
+    //     //         }
+    //     //     }
+    //     // }
+    // }
 }
 
 runLogin();

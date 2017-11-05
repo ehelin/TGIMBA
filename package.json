@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ftp": "^0.3.10"
+    "ftp": "^0.3.10",
+    "rs": "0.0.2"
   }
 }
