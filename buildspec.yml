@@ -14,6 +14,20 @@ phases:
       - echo BUILD Commands --------------------------------------------------
       - echo testing .net classic tgimba
       - ls
+      - rm -rf BucketListDataProvider
+      - rm -rf CommonServiceCode
+      - rm DashboardSQL.sql
+      - rm -rf Driver
+      - rm -rf MemberShip
+      - rm -rf MobileWebsite
+      - rm -rf Services
+      - rm -rf Shared
+      - rm TGIMBA.sln
+      - rm -rf Tests
+      - ls
+      - cp -r TgimbaWeb/* .
+      - rm -rf TgimbaWeb
+      - ls
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
