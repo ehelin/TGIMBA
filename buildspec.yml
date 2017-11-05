@@ -28,6 +28,7 @@ phases:
       - cp -r TgimbaWeb/* .
       - rm -rf TgimbaWeb
       - ls
+	  - echo use this to ftp into site - https://apple.stackexchange.com/questions/161850/how-can-i-connect-to-ftp-server-in-terminal
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
