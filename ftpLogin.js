@@ -1,4 +1,5 @@
 var Client = require('ftp');
+var fs = require('fs');
 
 function setOptions() {
     var options = {
