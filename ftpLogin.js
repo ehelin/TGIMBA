@@ -1,12 +1,12 @@
 var Client = require('ftp');
 
 function setOptions() {
-    var options = null;
-
-    options.host = process.env.FTP_HOST || 'localhost';
-    options.port = 21;
-    options.user = process.env.FTP_USER || 'anonymous';
-    options.password = process.env.FTP_PASS || 'anonymous@';
+    var options = {
+        host: process.env.FTP_HOST || 'localhost',
+        port: 21,
+        user: process.env.FTP_USER || 'anonymous',
+        password: process.env.FTP_PASS || 'anonymous@'
+    };
 
     return options;
 }
