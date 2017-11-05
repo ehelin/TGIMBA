@@ -28,6 +28,7 @@ phases:
       - cp -r TgimbaWeb/* .
       - rm -rf TgimbaWeb
       - ls
+      - aws codebuild help
       - ftp FTP_HOST
       - FTP_USER
       - FTP_PASS
