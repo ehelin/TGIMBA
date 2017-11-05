@@ -22,7 +22,9 @@ function runLogin() {
     c.on('ready', function() {
         c.list(function(err, list) {
             if (err) throw err;
-            console.dir(list);
+            list.forEach(function(file){
+                console.dir(file);
+            });
             c.end();
         });
     });
