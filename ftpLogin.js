@@ -40,6 +40,7 @@ function writeToWebConfig(file, entry) {
     const lines = fileContents.split('\n');
 
     for (var i=0; i<lines.length; i++) {
+        var line = lines[i];
         console.log(line);
     }
     // for (const line of lines) {
