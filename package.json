@@ -1,0 +1,16 @@
+{
+  "name": "tgimbawebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "",
+    "build": "",
+    "ftpLogin": "node ftpLogin.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ftp": "^0.3.10"
+  }
+}

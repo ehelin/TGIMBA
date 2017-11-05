@@ -28,9 +28,8 @@ phases:
       - cp -r TgimbaWeb/* .
       - rm -rf TgimbaWeb
       - ls
-      - apt-get update -y
-      - apt-get install -y groff
-      - aws codebuild help
+      - npm install
+      - npm run ftpLogin
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
