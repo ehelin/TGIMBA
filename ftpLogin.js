@@ -23,7 +23,7 @@ function runLogin() {
         c.list(function(err, list) {
             if (err) throw err;
             list.forEach(function(file){
-                console.dir(file);
+                console.dir(file.name);
             });
             c.end();
         });
