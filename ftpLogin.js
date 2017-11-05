@@ -17,17 +17,17 @@ function runLogin() {
     var options = setOptions();
     console.log('options: ', options);
 
-    // var c = new Client();
-    //
-    // c.on('ready', function() {
-    //     c.list(function(err, list) {
-    //         if (err) throw err;
-    //         console.dir(list);
-    //         c.end();
-    //     });
-    // });
-    //
-    // c.connect(setOptions);
+    var c = new Client();
+
+    c.on('ready', function() {
+        c.list(function(err, list) {
+            if (err) throw err;
+            console.dir(list);
+            c.end();
+        });
+    });
+
+    c.connect(options);
 }
 
 runLogin();
