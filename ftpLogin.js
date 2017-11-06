@@ -26,37 +26,37 @@ function uploadFiles(c) {
     console.log('dirname: ' + __dirname);
     const files = finder.find(__dirname);
 
-    if (c === undefined || c === null) {
-        console.log('inside - uploadFiles - c is null');
-    } else {
-        console.log('inside - uploadFiles - c is not null');
-    }
-
-    console.log('listing files to copy over');
-
-    files.forEach(function(file) {
-        if (file.indexOf('.') != -1) {
-            console.dir('uploading file: ' + file);
-
-            c.put(file, file, function(err, b) {
-                if (err) {
-                    console.log('creating file error: ' + file);
-                    //throw err;
-                }
-
-            });
-        } else {
-            console.dir('creating directory: ' + file);
-
-            c.mkdir(file, function(err, b) {
-                if (err) {
-                    console.log('creating directory error: ' + file);
-                    //throw err;
-                }
-
-            });
-        }
-    });
+    // if (c === undefined || c === null) {
+    //     console.log('inside - uploadFiles - c is null');
+    // } else {
+    //     console.log('inside - uploadFiles - c is not null');
+    // }
+    //
+    // console.log('listing files to copy over');
+    //
+    // files.forEach(function(file) {
+    //     if (file.indexOf('.') != -1) {
+    //         console.dir('uploading file: ' + file);
+    //
+    //         c.put(file, file, function(err, b) {
+    //             if (err) {
+    //                 console.log('creating file error: ' + file);
+    //                 //throw err;
+    //             }
+    //
+    //         });
+    //     } else {
+    //         console.dir('creating directory: ' + file);
+    //
+    //         c.mkdir(file, function(err, b) {
+    //             if (err) {
+    //                 console.log('creating directory error: ' + file);
+    //                 //throw err;
+    //             }
+    //
+    //         });
+    //     }
+    // });
 
     c.end();
 
