@@ -33,31 +33,34 @@ function runLogin() {
 
     var options = setOptions();
     console.log('options: ', options);
+    var filesToDelete = [];
 
     var c = new Client();
 
     c.on('ready', function() {
-        console.log('starting delete');
+        //console.log('starting delete');
 
-        c.delete('*', function(err, b) {
+        c.list(function(err, list) {
+            if (err) throw err;
 
-            if (err) {
-                console.log('deleting error');
-                throw err;
-            }
+            list.forEach(function(file){
+                console.dir(file.name);
+                //filesToDelete
+            });
 
-            console.log('delete over');
-
-            // c.list(function(err, list) {
-            //     if (err) throw err;
-            //
-            //     list.forEach(function(file){
-            //         console.dir(file.name);
-            //     });
-            //
-            //     c.end();
-            // });
+            c.end();
         });
+        // c.delete('*', function(err, b) {
+        //
+        //     if (err) {
+        //         console.log('deleting error');
+        //         throw err;
+        //     }
+        //
+        //     console.log('delete over');
+        //
+        //
+        // });
 
         // console.log('listing remote files:');
         //
