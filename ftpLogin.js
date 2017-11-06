@@ -18,8 +18,7 @@ function runLogin() {
     console.log('writing to file');
 
     writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
-    clearRemoteDirectory()
-
+    clearRemoteDirectory();
 }
 
 function uploadFiles() {
@@ -115,6 +114,8 @@ function clearRemoteDirectory() {
             });
 
             c.end();
+
+            uploadFiles();
         });
     });
 
