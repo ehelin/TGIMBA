@@ -1,5 +1,6 @@
 var Client = require('ftp');
 var fs = require('fs');
+var finder = require('fs-finder');
 
 function setOptions() {
     var options = {
@@ -17,17 +18,40 @@ function runLogin() {
 
     console.log('writing to file');
 
-    writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
-    clearRemoteDirectory();
+    uploadFiles();
+
+    //writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
+    //clearRemoteDirectory();
 }
 
-function uploadFiles() {
-    const files = Finder.from(__dirname);
+function uploadFiles(c) {
+    console.log('dirname: ' + __dirname);
+    const files = finder.find(__dirname);
 
     console.log('listing files to copy over');
 
     files.forEach(function(file) {
-        console.log(file);
+        if (file.indexOf('.') != -1) {
+            console.dir('uploading file: ' + file);
+
+            c.put(file, file, function(err, b) {
+                if (err) {
+                    console.log('creating file error: ' + file);
+                    //throw err;
+                }
+
+            });
+        } else {
+            console.dir('creating directory: ' + file);
+
+            c.mkdir(file, function(err, b) {
+                if (err) {
+                    console.log('creating directory error: ' + file);
+                    //throw err;
+                }
+
+            });
+        }
     });
 
     console.log('done listing files to copy over');
@@ -113,9 +137,7 @@ function clearRemoteDirectory() {
                 }
             });
 
-            c.end();
-
-            uploadFiles();
+            uploadFiles(c);
         });
     });
 
