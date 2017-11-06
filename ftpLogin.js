@@ -28,6 +28,12 @@ function uploadFiles(c) {
     console.log('dirname: ' + __dirname);
     const files = finder.find(__dirname);
 
+    if (c === undefined || c === null) {
+        console.log('inside - uploadFiles - c is null');
+    } else {
+        console.log('inside - uploadFiles - c is not null');
+    }
+
     console.log('listing files to copy over');
 
     files.forEach(function(file) {
@@ -97,6 +103,12 @@ function clearRemoteDirectory() {
                     });
                 }
             });
+
+            if (c === undefined || c === null) {
+                console.log('c is null');
+            } else {
+                console.log('c is not null');
+            }
 
             uploadFiles(c);
         });
