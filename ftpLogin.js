@@ -19,51 +19,54 @@ function runLogin() {
 
     writeToWebConfig('Web.config', '');
 
-    //======================
-    const fileContents = fs.readFileSync('Web.config', 'utf8');
-    const lines = fileContents.split('\n');
+    // //======================
+    // const fileContents = fs.readFileSync('Web.config', 'utf8');
+    // const lines = fileContents.split('\n');
+    //
+    // console.log('done writing to file');
+    //
+    // for (var i=0; i<lines.length; i++) {
+    //     var line = lines[i];
+    //     console.log(line);
+    // }
+    // //======================
 
-    console.log('done writing to file');
+    var options = setOptions();
+    console.log('options: ', options);
 
-    for (var i=0; i<lines.length; i++) {
-        var line = lines[i];
-        console.log(line);
-    }
-    //======================
+    var c = new Client();
 
-    // var options = setOptions();
-    // console.log('options: ', options);
-    //
-    // var c = new Client();
-    //
-    // c.on('ready', function() {
-    //
-    //     c.delete('*', function(err, b) {
-    //
-    //         if (err) throw err;
-    //
-    //         c.list(function(err, list) {
-    //             if (err) throw err;
-    //
-    //             list.forEach(function(file){
-    //                 console.dir(file.name);
-    //             });
-    //
-    //             c.end();
-    //         });
-    //     });
-    //
-    //     // c.list(function(err, list) {
-    //     //     if (err) throw err;
-    //     //
-    //     //     list.forEach(function(file){
-    //     //         console.dir(file.name);
-    //     //     });
-    //     //     c.end();
-    //     // });
-    // });
-    //
-    // c.connect(options);
+
+
+    c.on('ready', function() {
+        // c.delete('*', function(err, b) {
+        //
+        //     if (err) throw err;
+        //
+        //     c.list(function(err, list) {
+        //         if (err) throw err;
+        //
+        //         list.forEach(function(file){
+        //             console.dir(file.name);
+        //         });
+        //
+        //         c.end();
+        //     });
+        // });
+
+        console.log('listing remote files:');
+
+        c.list(function(err, list) {
+            if (err) throw err;
+
+            list.forEach(function(file){
+                console.dir(file.name);
+            });
+            c.end();
+        });
+    });
+
+    c.connect(options);
 }
 
 function writeToWebConfig(file, entry) {
