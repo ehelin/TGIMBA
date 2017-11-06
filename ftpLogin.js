@@ -38,22 +38,20 @@ function runLogin() {
 function writeToWebConfig(file, entry) {
     const fileContents = fs.readFileSync(file, 'utf8');
     const lines = fileContents.split('\n');
+    const newWebConfig = [];
+    const dbString = process.env.SQL_DB_CONNECTION_STR;
 
     for (var i=0; i<lines.length; i++) {
         var line = lines[i];
-        console.log(line);
+
+        if (line.indexOf('BucketListDbConnStrProd') != -1) {
+            line = '<add key="BucketListDbConnStrProd" value="' + dbString + '"/>';
+        }
+
+        newWebConfig.push(line);
     }
-    // for (const line of lines) {
-    //     console.log(line);
-    //     // if (line.indexOf('import') !== -1) {
-    //     //
-    //     //     for (const errorMatch of errorMatches) {
-    //     //         if (line.indexOf(errorMatch) !== -1 && line.indexOf('@local') === -1) {
-    //     //             throw new Error('cross project reference found - (file/line): (' + file + '/' + line + ')');
-    //     //         }
-    //     //     }
-    //     // }
-    // }
+
+    fs.writeFileSync("./Web.config", newWebConfig);
 }
 
 runLogin();
