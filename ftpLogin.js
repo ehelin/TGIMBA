@@ -38,40 +38,40 @@ function runLogin() {
     var c = new Client();
 
     c.on('ready', function() {
-        //console.log('starting delete');
+        console.log('starting list');
 
         c.list(function(err, list) {
             if (err) throw err;
 
             list.forEach(function(file){
                 console.dir(file.name);
-                //filesToDelete
+                filesToDelete.push(file.name);
+            });
+
+            console.log('done listing');
+            console.log('starting to delete');
+
+            filesToDelete.forEach(function(entry) {
+                console.dir('deleting: ' + entry);
+
+                if (entry.indexof('.') != -1) {
+                    c.delete(entry, function(err, b) {
+                        if (err) {
+                            console.log('deleting file error: ' + entry);
+                            throw err;
+                        }
+                    });
+                } else {
+                    c.rmdir(entry, true, function(err, b) {
+                        console.log('deleting directory error: ' + entry);
+                        throw err;
+
+                    });
+                }
             });
 
             c.end();
         });
-        // c.delete('*', function(err, b) {
-        //
-        //     if (err) {
-        //         console.log('deleting error');
-        //         throw err;
-        //     }
-        //
-        //     console.log('delete over');
-        //
-        //
-        // });
-
-        // console.log('listing remote files:');
-        //
-        // c.list(function(err, list) {
-        //     if (err) throw err;
-        //
-        //     list.forEach(function(file){
-        //         console.dir(file.name);
-        //     });
-        //     c.end();
-        // });
     });
 
     c.connect(options);
