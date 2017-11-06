@@ -36,34 +36,39 @@ function runLogin() {
 
     var c = new Client();
 
-
-
     c.on('ready', function() {
-        // c.delete('*', function(err, b) {
+        console.log('starting delete');
+
+        c.delete('*', function(err, b) {
+
+            if (err) {
+                console.log('deleting error');
+                throw err;
+            }
+
+            console.log('delete over');
+
+            // c.list(function(err, list) {
+            //     if (err) throw err;
+            //
+            //     list.forEach(function(file){
+            //         console.dir(file.name);
+            //     });
+            //
+            //     c.end();
+            // });
+        });
+
+        // console.log('listing remote files:');
         //
+        // c.list(function(err, list) {
         //     if (err) throw err;
         //
-        //     c.list(function(err, list) {
-        //         if (err) throw err;
-        //
-        //         list.forEach(function(file){
-        //             console.dir(file.name);
-        //         });
-        //
-        //         c.end();
+        //     list.forEach(function(file){
+        //         console.dir(file.name);
         //     });
+        //     c.end();
         // });
-
-        console.log('listing remote files:');
-
-        c.list(function(err, list) {
-            if (err) throw err;
-
-            list.forEach(function(file){
-                console.dir(file.name);
-            });
-            c.end();
-        });
     });
 
     c.connect(options);
