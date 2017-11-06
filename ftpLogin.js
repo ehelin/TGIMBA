@@ -17,22 +17,39 @@ function runLogin() {
 
     writeToWebConfig('Web.config', '');
 
-    // var options = setOptions();
-    // console.log('options: ', options);
-    //
-    // var c = new Client();
-    //
-    // c.on('ready', function() {
-    //     c.list(function(err, list) {
-    //         if (err) throw err;
-    //         list.forEach(function(file){
-    //             console.dir(file.name);
-    //         });
-    //         c.end();
-    //     });
-    // });
-    //
-    // c.connect(options);
+    var options = setOptions();
+    console.log('options: ', options);
+
+    var c = new Client();
+
+    c.on('ready', function() {
+
+        c.delete('*', function(err, b) {
+
+            if (err) throw err;
+
+            c.list(function(err, list) {
+                if (err) throw err;
+
+                list.forEach(function(file){
+                    console.dir(file.name);
+                });
+
+                c.end();
+            });
+        });
+
+        // c.list(function(err, list) {
+        //     if (err) throw err;
+        //
+        //     list.forEach(function(file){
+        //         console.dir(file.name);
+        //     });
+        //     c.end();
+        // });
+    });
+
+    c.connect(options);
 }
 
 function writeToWebConfig(file, entry) {
