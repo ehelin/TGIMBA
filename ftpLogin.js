@@ -15,7 +15,21 @@ function setOptions() {
 function runLogin() {
     console.log('inside runLogin');
 
+    console.log('writing to file');
+
     writeToWebConfig('Web.config', '');
+
+    //======================
+    const fileContents = fs.readFileSync(file, 'utf8');
+    const lines = fileContents.split('\n');
+
+    console.log('done writing to file');
+
+    for (var i=0; i<lines.length; i++) {
+        var line = lines[i];
+        console.log(line);
+    }
+    //======================
 
     // var options = setOptions();
     // console.log('options: ', options);
