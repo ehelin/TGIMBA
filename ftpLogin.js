@@ -104,6 +104,8 @@ function clearRemoteDirectory() {
                 }
             });
 
+            console.log('after filetodelete');
+
             if (c === undefined || c === null) {
                 console.log('c is null');
             } else {
