@@ -20,8 +20,8 @@ function runLogin() {
 
     uploadFiles();
 
-    //writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
-    //clearRemoteDirectory();
+    writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
+    clearRemoteDirectory();
 }
 
 function uploadFiles(c) {
@@ -54,48 +54,9 @@ function uploadFiles(c) {
         }
     });
 
-    console.log('done listing files to copy over');
+    c.end();
 
-    // c.on('ready', function() {
-    //     console.log('starting upload');
-    //
-    //     c.list(function(err, list) {
-    //         if (err) throw err;
-    //
-    //         list.forEach(function(file){
-    //             console.dir(file.name);
-    //             filesToDelete.push(file.name);
-    //         });
-    //
-    //         console.log('done listing');
-    //         console.log('starting to delete');
-    //
-    //         filesToDelete.forEach(function(entry) {
-    //             if (entry.indexOf('.') != -1) {
-    //                 console.dir('deleting file: ' + entry);
-    //
-    //                 c.delete(entry, function(err, b) {
-    //                     if (err) {
-    //                         console.log('deleting file error: ' + entry);
-    //                         //throw err;
-    //                     }
-    //                 });
-    //             } else {
-    //                 console.dir('deleting directory: ' + entry);
-    //
-    //                 c.rmdir(entry, true, function(err, b) {
-    //                     console.log('deleting directory error: ' + entry);
-    //                     //throw err;
-    //
-    //                 });
-    //             }
-    //         });
-    //
-    //         c.end();
-    //     });
-    // });
-    //
-    // c.connect(setOptions());
+    console.log('done copying files over');
 }
 
 function clearRemoteDirectory() {
