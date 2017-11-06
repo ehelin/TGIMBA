@@ -20,7 +20,7 @@ function runLogin() {
     writeToWebConfig('Web.config', '');
 
     //======================
-    const fileContents = fs.readFileSync(file, 'utf8');
+    const fileContents = fs.readFileSync('Web.config', 'utf8');
     const lines = fileContents.split('\n');
 
     console.log('done writing to file');
