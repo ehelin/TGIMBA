@@ -23,42 +23,49 @@ function runLogin() {
 }
 
 function uploadFiles(c) {
-    console.log('dirname: ' + __dirname);
-    const files = finder.find(__dirname);
+    const parent = __dirname;
 
-    // if (c === undefined || c === null) {
-    //     console.log('inside - uploadFiles - c is null');
-    // } else {
-    //     console.log('inside - uploadFiles - c is not null');
-    // }
-    //
-    // console.log('listing files to copy over');
-    //
-    // files.forEach(function(file) {
-    //     if (file.indexOf('.') != -1) {
-    //         console.dir('uploading file: ' + file);
-    //
-    //         c.put(file, file, function(err, b) {
-    //             if (err) {
-    //                 console.log('creating file error: ' + file);
-    //                 //throw err;
-    //             }
-    //
-    //         });
-    //     } else {
-    //         console.dir('creating directory: ' + file);
-    //
-    //         c.mkdir(file, function(err, b) {
-    //             if (err) {
-    //                 console.log('creating directory error: ' + file);
-    //                 //throw err;
-    //             }
-    //
-    //         });
-    //     }
-    // });
+    console.log('parent: ' + parent);
 
-    c.end();
+    const files = finder.find(parent);
+
+    if (c === undefined || c === null) {
+        console.log('inside - uploadFiles - c is null');
+    } else {
+        console.log('inside - uploadFiles - c is not null');
+    }
+
+    console.log('copying files over');
+
+    files.forEach(function(file) {
+        const toCreateFile = file.replace(parent, '');
+
+        if (toCreateFile.indexOf('.') != -1) {
+            console.dir('uploading file: ' + toCreateFile);
+
+            c.put(toCreateFile, toCreateFile, function(err, b) {
+                if (err) {
+                    console.log('creating file error: ' + toCreateFile);
+                    //throw err;
+                }
+
+            });
+        } else {
+            console.dir('creating directory: ' + toCreateFile);
+
+            c.mkdir(toCreateFile, function(err, b) {
+                if (err) {
+                    console.log('creating directory error: ' + toCreateFile);
+                    //throw err;
+                }
+
+            });
+        }
+
+        c.end();
+    });
+
+    //c.end();
 
     console.log('done copying files over');
 }
