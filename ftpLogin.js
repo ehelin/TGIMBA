@@ -52,19 +52,21 @@ function runLogin() {
             console.log('starting to delete');
 
             filesToDelete.forEach(function(entry) {
-                console.dir('deleting: ' + entry);
-
                 if (entry.indexOf('.') != -1) {
+                    console.dir('deleting file: ' + entry);
+
                     c.delete(entry, function(err, b) {
                         if (err) {
                             console.log('deleting file error: ' + entry);
-                            throw err;
+                            //throw err;
                         }
                     });
                 } else {
+                    console.dir('deleting directory: ' + entry);
+
                     c.rmdir(entry, true, function(err, b) {
                         console.log('deleting directory error: ' + entry);
-                        throw err;
+                        //throw err;
 
                     });
                 }
