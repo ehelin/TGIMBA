@@ -54,7 +54,7 @@ function runLogin() {
             filesToDelete.forEach(function(entry) {
                 console.dir('deleting: ' + entry);
 
-                if (entry.indexof('.') != -1) {
+                if (entry.indexOf('.') != -1) {
                     c.delete(entry, function(err, b) {
                         if (err) {
                             console.log('deleting file error: ' + entry);
