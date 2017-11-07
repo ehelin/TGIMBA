@@ -18,7 +18,7 @@ function runLogin() {
 
     console.log('writing to file');
 
-    const webConfigFile = __dirname + '/test/Web.config';
+    const webConfigFile = __dirname + '/Web.config';
     writeToWebConfig(webConfigFile, process.env.SQL_DB_CONNECTION_STR);
     //writeToWebConfig(webConfigFile, 'aDbString');
     clearRemoteDirectory();
