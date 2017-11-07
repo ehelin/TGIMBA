@@ -87,34 +87,34 @@ function clearRemoteDirectory() {
             console.log('done listing');
             console.log('starting to delete');
 
-            // filesToDelete.forEach(function(entry) {
-            //     if (entry.indexOf('.') != -1) {
-            //         console.dir('deleting file: ' + entry);
-            //
-            //         c.delete(entry, function(err, b) {
-            //             if (err) {
-            //                 console.log('deleting file error: ' + entry);
-            //                 //throw err;
-            //             }
-            //         });
-            //     } else {
-            //         console.dir('deleting directory: ' + entry);
-            //
-            //         c.rmdir(entry, true, function(err, b) {
-            //             console.log('deleting directory error: ' + entry);
-            //             //throw err;
-            //
-            //         });
-            //     }
-            // });
+            filesToDelete.forEach(function(entry) {
+                if (entry.indexOf('.') != -1) {
+                    console.dir('deleting file: ' + entry);
 
-            // console.log('after filetodelete');
-            //
-            // if (c === undefined || c === null) {
-            //     console.log('c is null');
-            // } else {
-            //     console.log('c is not null');
-            // }
+                    c.delete(entry, function(err, b) {
+                        if (err) {
+                            console.log('deleting file error: ' + entry);
+                            //throw err;
+                        }
+                    });
+                } else {
+                    console.dir('deleting directory: ' + entry);
+
+                    c.rmdir(entry, true, function(err, b) {
+                        console.log('deleting directory error: ' + entry);
+                        //throw err;
+
+                    });
+                }
+            });
+
+            console.log('after filetodelete');
+
+            if (c === undefined || c === null) {
+                console.log('c is null');
+            } else {
+                console.log('c is not null');
+            }
 
             uploadFiles(c);
         });
@@ -139,6 +139,8 @@ function writeToWebConfig(file, entry) {
 
         newWebConfig.push(line);
     }
+
+    console.log('webconfig', newWebConfig);
 
     fs.writeFileSync("./Web.config", newWebConfig);
 }
