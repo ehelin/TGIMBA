@@ -125,9 +125,6 @@ function clearRemoteDirectory() {
 
 function writeToWebConfig(file, entry) {
     const fileContents = fs.readFileSync(file, 'utf8');
-
-    
-
     const lines = fileContents.split('\n');
     const newWebConfig = [];
 
@@ -137,6 +134,8 @@ function writeToWebConfig(file, entry) {
         if (line.indexOf('BucketListDbConnStrProd') != -1) {
             line = '<add key="BucketListDbConnStrProd" value="' + entry + '"/>';
         }
+
+        line = line.replace(',','');
 
         newWebConfig.push(line);
     }
