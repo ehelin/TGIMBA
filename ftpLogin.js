@@ -18,7 +18,9 @@ function runLogin() {
 
     console.log('writing to file');
 
-    writeToWebConfig('Web.config', process.env.SQL_DB_CONNECTION_STR);
+    const webConfigFile = __dirname + '/test/Web.config';
+    writeToWebConfig(webConfigFile, process.env.SQL_DB_CONNECTION_STR);
+    //writeToWebConfig(webConfigFile, 'aDbString');
     clearRemoteDirectory();
 }
 
@@ -38,17 +40,17 @@ function uploadFiles(c) {
     console.log('copying files over');
 
     files.forEach(function(file) {
+        console.log('file: ' + file);
         const toCreateFile = file.replace(parent, '');
 
         if (toCreateFile.indexOf('.') != -1) {
             console.dir('uploading file: ' + toCreateFile);
 
-            c.put(toCreateFile, toCreateFile, function(err, b) {
+            c.put(file, toCreateFile, function(err, b) {
                 if (err) {
                     console.log('creating file error: ' + toCreateFile);
                     //throw err;
                 }
-
             });
         } else {
             console.dir('creating directory: ' + toCreateFile);
@@ -58,14 +60,11 @@ function uploadFiles(c) {
                     console.log('creating directory error: ' + toCreateFile);
                     //throw err;
                 }
-
             });
         }
-
-        c.end();
     });
 
-    //c.end();
+    c.end();
 
     console.log('done copying files over');
 }
@@ -88,34 +87,34 @@ function clearRemoteDirectory() {
             console.log('done listing');
             console.log('starting to delete');
 
-            filesToDelete.forEach(function(entry) {
-                if (entry.indexOf('.') != -1) {
-                    console.dir('deleting file: ' + entry);
+            // filesToDelete.forEach(function(entry) {
+            //     if (entry.indexOf('.') != -1) {
+            //         console.dir('deleting file: ' + entry);
+            //
+            //         c.delete(entry, function(err, b) {
+            //             if (err) {
+            //                 console.log('deleting file error: ' + entry);
+            //                 //throw err;
+            //             }
+            //         });
+            //     } else {
+            //         console.dir('deleting directory: ' + entry);
+            //
+            //         c.rmdir(entry, true, function(err, b) {
+            //             console.log('deleting directory error: ' + entry);
+            //             //throw err;
+            //
+            //         });
+            //     }
+            // });
 
-                    c.delete(entry, function(err, b) {
-                        if (err) {
-                            console.log('deleting file error: ' + entry);
-                            //throw err;
-                        }
-                    });
-                } else {
-                    console.dir('deleting directory: ' + entry);
-
-                    c.rmdir(entry, true, function(err, b) {
-                        console.log('deleting directory error: ' + entry);
-                        //throw err;
-
-                    });
-                }
-            });
-
-            console.log('after filetodelete');
-
-            if (c === undefined || c === null) {
-                console.log('c is null');
-            } else {
-                console.log('c is not null');
-            }
+            // console.log('after filetodelete');
+            //
+            // if (c === undefined || c === null) {
+            //     console.log('c is null');
+            // } else {
+            //     console.log('c is not null');
+            // }
 
             uploadFiles(c);
         });
@@ -126,6 +125,9 @@ function clearRemoteDirectory() {
 
 function writeToWebConfig(file, entry) {
     const fileContents = fs.readFileSync(file, 'utf8');
+
+    
+
     const lines = fileContents.split('\n');
     const newWebConfig = [];
 
