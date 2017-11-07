@@ -16,57 +16,35 @@ function setOptions() {
 function runLogin() {
     console.log('inside runLogin');
 
-    console.log('writing to file');
-
-    const webConfigFile = __dirname + '/Web.config';
-    writeToWebConfig(webConfigFile, process.env.SQL_DB_CONNECTION_STR);
-    //writeToWebConfig(webConfigFile, 'aDbString');
+    writeToWebConfig(__dirname + '/Web.config', process.env.SQL_DB_CONNECTION_STR);
     clearRemoteDirectory();
 }
 
 function uploadFiles(c) {
+    console.log('inside uploadFiles');
+
     const parent = __dirname;
-
-    console.log('parent: ' + parent);
-
     const files = finder.find(parent);
 
-    if (c === undefined || c === null) {
-        console.log('inside - uploadFiles - c is null');
-    } else {
-        console.log('inside - uploadFiles - c is not null');
-    }
-
-    console.log('copying files over');
-
     files.forEach(function(file) {
-        console.log('file: ' + file);
         const toCreateFile = file.replace(parent, '');
 
         if (toCreateFile.indexOf('.') != -1) {
-            console.dir('uploading file: ' + toCreateFile);
-
             c.put(file, toCreateFile, function(err, b) {
                 if (err) {
                     console.log('creating file error: ' + toCreateFile);
-                    //throw err;
                 }
             });
         } else {
-            console.dir('creating directory: ' + toCreateFile);
-
             c.mkdir(toCreateFile, function(err, b) {
                 if (err) {
                     console.log('creating directory error: ' + toCreateFile);
-                    //throw err;
                 }
             });
         }
     });
 
     c.end();
-
-    console.log('done copying files over');
 }
 
 function clearRemoteDirectory() {
@@ -74,8 +52,6 @@ function clearRemoteDirectory() {
     var c = new Client();
 
     c.on('ready', function() {
-        console.log('starting list');
-
         c.list(function(err, list) {
             if (err) throw err;
 
@@ -84,37 +60,21 @@ function clearRemoteDirectory() {
                 filesToDelete.push(file.name);
             });
 
-            console.log('done listing');
-            console.log('starting to delete');
-
             filesToDelete.forEach(function(entry) {
                 if (entry.indexOf('.') != -1) {
-                    console.dir('deleting file: ' + entry);
-
                     c.delete(entry, function(err, b) {
                         if (err) {
                             console.log('deleting file error: ' + entry);
-                            //throw err;
                         }
                     });
                 } else {
-                    console.dir('deleting directory: ' + entry);
-
                     c.rmdir(entry, true, function(err, b) {
-                        console.log('deleting directory error: ' + entry);
-                        //throw err;
-
+                        if (err) {
+                            console.log('deleting directory error: ' + entry);
+                        }
                     });
                 }
             });
-
-            console.log('after filetodelete');
-
-            if (c === undefined || c === null) {
-                console.log('c is null');
-            } else {
-                console.log('c is not null');
-            }
 
             uploadFiles(c);
         });
@@ -126,7 +86,7 @@ function clearRemoteDirectory() {
 function writeToWebConfig(file, entry) {
     const fileContents = fs.readFileSync(file, 'utf8');
     const lines = fileContents.split('\n');
-    let newWebConfig = '';
+    var newWebConfig = '';
 
     for (var i=0; i<lines.length; i++) {
         var line = lines[i];
