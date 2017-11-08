@@ -6,13 +6,16 @@
   "scripts": {
     "test": "",
     "build": "",
-    "ftpLogin": "node ftpLogin.js"
+    "ftpLogin": "node ftpLogin.js",
+    "verifyDeploy": "node verifyDeploy.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fs": "0.0.1-security",
     "fs-finder": "^1.8.1",
-    "ftp": "^0.3.10"
+    "ftp": "^0.3.10",
+    "http": "0.0.0",
+    "https": "^1.0.0"
   }
 }

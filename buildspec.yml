@@ -30,6 +30,7 @@ phases:
       - ls
       - npm install
       - npm run ftpLogin
+      - npm run verifyDeploy
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
