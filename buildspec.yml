@@ -28,7 +28,9 @@ phases:
       - cp -r TgimbaWeb/* .
       - rm -rf TgimbaWeb
       - ls
-	  - echo use this to ftp into site - https://apple.stackexchange.com/questions/161850/how-can-i-connect-to-ftp-server-in-terminal
+      - npm install
+      - npm run ftpLogin
+      - npm run verifyDeploy
   post_build:
     commands:
       - echo POST BUILD Commands ---------------------------------------------
