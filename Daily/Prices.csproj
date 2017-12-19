@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{891E755D-4709-4A63-946F-557000D50BBA}</ProjectGuid>
+    <ProjectGuid>{EAB7D64A-B6EF-4996-B348-6965C60C78DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommonServiceCode</RootNamespace>
-    <AssemblyName>CommonServiceCode</AssemblyName>
+    <RootNamespace>Daily</RootNamespace>
+    <AssemblyName>Daily</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,26 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TgimbaService.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="GetDailyPrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BucketListDataProvider\BucketListDataProvider.csproj">
-      <Project>{b948848f-eccd-46f4-93c7-5ea4a417a5c8}</Project>
-      <Name>BucketListDataProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Daily\Prices.csproj">
-      <Project>{eab7d64a-b6ef-4996-b348-6965c60c78de}</Project>
-      <Name>Prices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MemberShip\AccountDataProvider.csproj">
-      <Project>{9397444c-376f-474c-9e96-ff434479993b}</Project>
-      <Name>AccountDataProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Shared\Shared.csproj">
-      <Project>{cf111be2-fe73-4ac4-8188-fd839737ac12}</Project>
-      <Name>Shared</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

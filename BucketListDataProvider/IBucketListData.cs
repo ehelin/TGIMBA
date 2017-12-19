@@ -1,4 +1,5 @@
 ﻿using Shared.Dto;
+using System;s
 
 namespace BucketListDataProvider
 {
@@ -14,5 +15,7 @@ namespace BucketListDataProvider
 
         string[] GetBucketListV2(string userName, string sortString);
         bool UpsertBucketListItemV2(string[] bucketListItems);
+
+        bool InsertDailyPrice(string stockSymbol, DateTime date, decimal price);
     }
 }

@@ -6,6 +6,7 @@ using Shared.Dto;
 using Shared.Interfaces;
 using AccountDataProvider.dto;
 using System;
+using GetYearToDate;
 
 namespace CommonServiceCode
 {
@@ -290,6 +291,40 @@ namespace CommonServiceCode
             }
 
             return results;
+        }
+
+        public string[] GetDaily(string encodedUser, string encodedToken, bool isNasdaq)
+        {
+            IBucketListData bld = null;
+            string[] result = null;
+
+            try
+            {
+                bld = new BucketListData(Utilities.GetDbSetting());
+
+                string decodedUserName = Utilities.DecodeClientBase64String(encodedUser);
+                string decodedToken = Utilities.DecodeClientBase64String(encodedToken);
+
+                //LogParameters();
+
+                if (ProcessToken(decodedUserName, decodedToken))
+                {
+                    GetDailyPrice gdp = new GetDailyPrice();
+
+                    // TODO - do something with bool result?
+                    bool goodPull = gdp.GetDailySpreadsheet(isNasdaq);
+                }
+                else
+                {
+                    result = Utilities.GetInValidTokenResponse();
+                }
+            }
+            catch (Exception e)
+            {
+                bld.LogMsg("Error: " + e.Message + ", trace: " + e.StackTrace.ToString());
+            }
+
+            return result;
         }
 
         #region Private Methods

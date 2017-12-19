@@ -33,6 +33,16 @@ namespace TgimbaRestService.Controllers
             return results;
         }
 
+        //GET api/BucketList
+        [HttpGet]
+        [Route("api/getDaily")]
+        public string[] GetDaily()
+        {
+            string[] results = client.GetDashboard();
+
+            return results;
+        }
+
         //HACK Alert! - Meant for the Android client which didn't place nice with .net posts when testing
         [HttpGet]
         [Route("api/BucketListUpsert")]
