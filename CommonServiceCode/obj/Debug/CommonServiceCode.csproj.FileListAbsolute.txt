@@ -1,0 +1,13 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\obj\Debug\CommonServiceCode.csprojResolveAssemblyReference.cache
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\CommonServiceCode.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\CommonServiceCode.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\AccountDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\BucketListDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\Daily.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\BucketListDataProvider.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\Daily.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\AccountDataProvider.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\bin\Debug\Shared.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\obj\Debug\CommonServiceCode.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\CommonServiceCode\obj\Debug\CommonServiceCode.pdb

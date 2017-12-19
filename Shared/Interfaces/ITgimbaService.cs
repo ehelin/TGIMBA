@@ -15,6 +15,6 @@ namespace Shared.Interfaces
         string[] UpsertBucketListItem(string encodedBucketListItems, string encodedUser, string encodedToken);
         string[] DeleteBucketListItem(int bucketListDbId, string encodedUser, string encodedToken);
         string[] GetDashboard();
-        void GetDaily();
+        string[] GetDaily(string encodedUser, string encodedToken, bool isNasdaq);
     }
 }

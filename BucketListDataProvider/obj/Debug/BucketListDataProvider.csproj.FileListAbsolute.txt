@@ -1,0 +1,7 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\obj\Debug\BucketListDataProvider.csprojResolveAssemblyReference.cache
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\bin\Debug\BucketListDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\bin\Debug\BucketListDataProvider.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\bin\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\bin\Debug\Shared.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\obj\Debug\BucketListDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\BucketListDataProvider\obj\Debug\BucketListDataProvider.pdb

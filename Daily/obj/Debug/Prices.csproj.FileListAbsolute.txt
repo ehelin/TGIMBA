@@ -1,0 +1,6 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\bin\Debug\Daily.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\bin\Debug\Daily.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\obj\Debug\Daily.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Daily\obj\Debug\Daily.pdb

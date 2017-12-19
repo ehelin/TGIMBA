@@ -1,0 +1,8 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\bin\Debug\Driver.exe.config
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\bin\Debug\Driver.exe
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\bin\Debug\Driver.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\bin\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\bin\Debug\Shared.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\obj\Debug\Driver.csprojResolveAssemblyReference.cache
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\obj\Debug\Driver.exe
+C:\Users\Silvia\Source\Repos\TGIMBA\Driver\obj\Debug\Driver.pdb

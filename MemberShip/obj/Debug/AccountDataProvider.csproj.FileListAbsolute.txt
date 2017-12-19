@@ -1,0 +1,7 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\bin\Debug\AccountDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\bin\Debug\AccountDataProvider.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\bin\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\bin\Debug\Shared.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\obj\Debug\AccountDataProvider.csprojResolveAssemblyReference.cache
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\obj\Debug\AccountDataProvider.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\MemberShip\obj\Debug\AccountDataProvider.pdb

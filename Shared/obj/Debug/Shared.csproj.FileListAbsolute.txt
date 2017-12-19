@@ -1,0 +1,4 @@
+C:\Users\Silvia\Source\Repos\TGIMBA\Shared\bin\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Shared\bin\Debug\Shared.pdb
+C:\Users\Silvia\Source\Repos\TGIMBA\Shared\obj\Debug\Shared.dll
+C:\Users\Silvia\Source\Repos\TGIMBA\Shared\obj\Debug\Shared.pdb

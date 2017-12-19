@@ -9,41 +9,6 @@ namespace BucketListDataProvider
 {
     public partial class BucketListData : IBucketListData
     {
-        public bool InsertDailyPrice(string stockSymbol, DateTime date, decimal price)
-        {
-            SqlConnection conn = null;
-            SqlCommand cmd = null;
-            string curFile = string.Empty;
-
-            try
-            {
-                conn = new SqlConnection(connectionString);
-                cmd = conn.CreateCommand();
-                cmd = new SqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = ConstantsV2.INSERT_DAILY_PRICE;
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                cmd.Parameters.Add(new SqlParameter("@StockSymbol", stockSymbol));
-                cmd.Parameters.Add(new SqlParameter("@price", price));
-                cmd.Parameters.Add(new SqlParameter("@date", date));
-
-                conn.Open();
-
-                cmd.ExecuteNonQuery();
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                CloseDbObjects(conn, cmd, null);
-            }
-        }
-
         public string[] GetBucketListV2(string userName, string sortString)
         {
             IList<BucketListItem> listItems = GetListItemsV2(userName, sortString);

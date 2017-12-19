@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using Con
 
 namespace GetYearToDate
 {
