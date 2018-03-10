@@ -26,9 +26,9 @@ namespace TgimbaWpfClient.Views
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Instance.SetCurrentPanel(UseControls.Login);
+            MainWindow.Instance.SetCurrentPanel(UseControls.Menu);
         }
     }
 }

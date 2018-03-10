@@ -5,3 +5,6 @@ package-lock.json
 /Driver
 /TgimbaWpfClient/obj/Debug
 /TgimbaWpfClient/bin/Debug
+/Tests/obj/Debug
+/Shared/obj/Debug
+/Daily/obj/Debug

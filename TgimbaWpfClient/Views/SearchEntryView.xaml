@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="TgimbaWpfClient.Views.SearchEntryView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TgimbaWpfClient.Views"
+             >
+    <Grid>
+        <TextBox x:Name="tbSearchTerm" Height="23" Margin="37,13,34,169" TextWrapping="Wrap" Text="SearchTerm"  Width="120"/>
+        <Button x:Name="btnSearch" Content="Search" Height="24" 
+            Margin="57,58,63,123" Width="71" Click="btnSearch_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Height="24" 
+            Margin="57,87,63,94" Width="71" Click="btnCancel_Click"/>
+
+    </Grid>
+</UserControl>

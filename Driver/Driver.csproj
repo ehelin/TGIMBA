@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Daily\Prices.csproj">
+      <Project>{eab7d64a-b6ef-4996-b348-6965c60c78de}</Project>
+      <Name>Prices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{cf111be2-fe73-4ac4-8188-fd839737ac12}</Project>
       <Name>Shared</Name>

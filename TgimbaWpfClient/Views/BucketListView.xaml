@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TgimbaWpfClient.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             xmlns:local="clr-namespace:TgimbaWpfClient.Views">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left"
-                   Height="46" Margin="89,82,0,0" TextWrapping="Wrap" Text="Bucket List View" VerticalAlignment="Top" Width="96" TextAlignment="Center"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="89,166,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBlock x:Name="textBlock"
+                   Height="46" Margin="40,66,50,78" TextWrapping="Wrap" Text="Bucket List View" Width="96" TextAlignment="Center"/>
+        <Button x:Name="button" Content="Menu"  Margin="52,0,59,166" 
+                Height="24" Width="75" Click="btnMenu_Click"/>
 
     </Grid>
 </UserControl>

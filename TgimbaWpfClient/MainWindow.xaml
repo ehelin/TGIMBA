@@ -4,14 +4,22 @@
         xmlns:v="clr-namespace:TgimbaWpfClient.Views"
         xmlns:vm="clr-namespace:TgimbaWpfClient.ViewModels"
         xmlns:local="clr-namespace:TgimbaWpfClient"
-        Title="MainWindow" Height="350" Width="525"
+        Title="TGIMBA" Height="550" Width="525"
         xmlns:myUserControls="clr-namespace:TgimbaWpfClient.Views">
-    
-
     <Grid>
-        
-        <myUserControls:LoginView Visibility="Visible" x:Name="ucLogin" />
-        <myUserControls:BucketListView Visibility="Hidden" x:Name="ucBucketList"/>
-
+        <myUserControls:AddEditView Visibility="Hidden" x:Name="ucAditEdit" 
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:BucketListView Visibility="Hidden" x:Name="ucBucketList" 
+                                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:LoginView Visibility="Visible" x:Name="ucLogin" 
+                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:MenuView Visibility="Hidden" x:Name="ucMenu" 
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:RegistrationView Visibility="Hidden" x:Name="ucRegistration" 
+                                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:SearchEntryView Visibility="Hidden" x:Name="ucSearchEntry" 
+                                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <myUserControls:SearchResultsView Visibility="Hidden" x:Name="ucSearchResults" 
+                                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
     </Grid>
 </Window>

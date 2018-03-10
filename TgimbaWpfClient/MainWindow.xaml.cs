@@ -1,48 +1,53 @@
 ﻿using System.Windows;
-using Shared.Interfaces;
-using CommonServiceCode;
-using TgimbaWpfClient;
 
 namespace TgimbaWpfClient
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance;
+
         public MainWindow()
         {
             InitializeComponent();
-            //Test();
             Instance = this;
-        }
-        public static MainWindow Instance;
-
-        private void Test()
-        {
-            ITgimbaService service = new TgimbaService();
-            var result = service.GetDashboard();
-            int test = 1;
-            var tesft = ucBucketList.ActualHeight;
         }
 
         public void SetCurrentPanel(UseControls userControl)
         {
             HideAllUserControls();
 
-            if (userControl == UseControls.Login) 
-            {
-                ucLogin.Visibility = Visibility.Visible;
-            }
-            else if (userControl == UseControls.BucketList)
-            {
-                ucBucketList.Visibility = Visibility.Visible;
+            switch (userControl) {
+                case UseControls.AddEdit:
+                    ucAditEdit.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.BucketList:
+                    ucBucketList.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.Menu:
+                    ucMenu.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.Registration:
+                    ucRegistration.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.SearchEntry:
+                    ucSearchEntry.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.SeachResults:
+                    ucSearchResults.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    ucLogin.Visibility = Visibility.Visible;
+                    break;
             }
         }
-
         private void HideAllUserControls() {
-            ucLogin.Visibility = Visibility.Hidden;
+            ucAditEdit.Visibility = Visibility.Hidden;
             ucBucketList.Visibility = Visibility.Hidden;
+            ucLogin.Visibility = Visibility.Hidden;
+            ucMenu.Visibility = Visibility.Hidden;
+            ucRegistration.Visibility = Visibility.Hidden;
+            ucSearchEntry.Visibility = Visibility.Hidden;
+            ucSearchResults.Visibility = Visibility.Hidden;
         }
     }
 }
