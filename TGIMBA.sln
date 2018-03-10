@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requiredDlls", "requiredDll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prices", "Daily\Prices.csproj", "{EAB7D64A-B6EF-4996-B348-6965C60C78DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TgimbaWpfClient", "TgimbaWpfClient\TgimbaWpfClient.csproj", "{95C5EEE7-3BC5-4EC9-8455-44448BA03B18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{EAB7D64A-B6EF-4996-B348-6965C60C78DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB7D64A-B6EF-4996-B348-6965C60C78DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB7D64A-B6EF-4996-B348-6965C60C78DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C5EEE7-3BC5-4EC9-8455-44448BA03B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C5EEE7-3BC5-4EC9-8455-44448BA03B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C5EEE7-3BC5-4EC9-8455-44448BA03B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C5EEE7-3BC5-4EC9-8455-44448BA03B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
