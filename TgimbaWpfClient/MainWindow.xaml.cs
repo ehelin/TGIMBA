@@ -22,6 +22,7 @@ namespace TgimbaWpfClient
                     ucAditEdit.Visibility = Visibility.Visible;
                     break;
                 case UseControls.BucketList:
+                    ucBucketList.DisplayBucketListItems();
                     ucBucketList.Visibility = Visibility.Visible;
                     break;
                 case UseControls.Menu:
@@ -34,6 +35,7 @@ namespace TgimbaWpfClient
                     ucSearchEntry.Visibility = Visibility.Visible;
                     break;
                 case UseControls.SeachResults:
+                    ucSearchResults.SearchBucketListItems();
                     ucSearchResults.Visibility = Visibility.Visible;
                     break;
                 default:

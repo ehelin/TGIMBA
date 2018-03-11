@@ -19,11 +19,6 @@ namespace TgimbaWpfClient.Views
             MainWindow.Instance.SetCurrentPanel(UseControls.AddEdit);
         }
 
-        private void btnSort_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
-        }
-
         private void btnLogout_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             menuModel.LogOut();

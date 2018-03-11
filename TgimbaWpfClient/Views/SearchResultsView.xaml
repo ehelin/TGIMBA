@@ -6,10 +6,17 @@
         xmlns:local="clr-namespace:TgimbaWpfClient.Views"
              >
     <Grid>
-        <TextBlock x:Name="textBlock"
-            Height="46" Margin="40,66,50,78" TextWrapping="Wrap" Text="Search Results View" Width="96" TextAlignment="Center"/>
-        <Button x:Name="btnBucketItemList" Content="Bucket Item List"  Margin="52,0,59,166" 
-            Height="24" Width="120" Click="btnBucketItemList_Click"/>
-
+        <DockPanel VerticalAlignment="Stretch">
+            <Button x:Name="button" Content="Bucket List Items" 
+                Height="24" Width="120" Click="btnBucketItemList_Click" 
+                    DockPanel.Dock="Top" />
+            <ScrollViewer>
+                <TextBlock x:Name="tbBucketListItems"
+                    TextWrapping="Wrap" Text="" 
+                   TextAlignment="Left" HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       DockPanel.Dock="Bottom"/>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </UserControl>

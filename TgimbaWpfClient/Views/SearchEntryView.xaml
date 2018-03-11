@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TgimbaWpfClient.Views"
              >
-    <Grid>
-        <TextBox x:Name="tbSearchTerm" Height="23" Margin="37,13,34,169" TextWrapping="Wrap" Text="SearchTerm"  Width="120"/>
+    <Grid VerticalAlignment="Top">
+        <TextBox x:Name="tbSearchTerm" Height="23" Margin="37,44,34,344" TextWrapping="Wrap" 
+                 Text=""  Width="120"/>
         <Button x:Name="btnSearch" Content="Search" Height="24" 
-            Margin="57,58,63,123" Width="71" Click="btnSearch_Click"/>
+            Margin="61,72,59,315" Width="71" Click="btnSearch_Click"/>
         <Button x:Name="btnCancel" Content="Cancel" Height="24" 
-            Margin="57,87,63,94" Width="71" Click="btnCancel_Click"/>
+            Margin="61,101,59,286" Width="71" Click="btnCancel_Click"/>
+        <Label x:Name="lblUserName" Content="Search Term" Height="34" Margin="37,17,34,360" Width="120" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </UserControl>

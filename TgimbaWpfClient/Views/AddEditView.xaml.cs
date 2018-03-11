@@ -2,9 +2,6 @@
 
 namespace TgimbaWpfClient.Views
 {
-    /// <summary>
-    /// Interaction logic for AddEdit.xaml
-    /// </summary>
     public partial class AddEditView : UserControl
     {
         public AddEditView()

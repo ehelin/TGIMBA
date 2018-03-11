@@ -1,29 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TgimbaWpfClient.ViewModels;
+using System.Text;
 
 namespace TgimbaWpfClient.Views
 {
-    /// <summary>
-    /// Interaction logic for BucketListView.xaml
-    /// </summary>
     public partial class BucketListView : UserControl
     {
+        private BucketListModel bucketListModel = null;
+
         public BucketListView()
         {
             InitializeComponent();
+
+            bucketListModel = new BucketListModel();
+        }
+
+        public void DisplayBucketListItems()
+        {
+            string[] bucketListItems = bucketListModel.GetBucketListItems();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Bucket List");
+            sb.AppendLine("");
+
+            int ctr = 1;
+            foreach (string bucketListItem in bucketListItems)
+            {
+                string[] bucketListItemComponents = bucketListItem.Split(',');
+                sb.AppendLine(ctr.ToString() + "-" + bucketListItemComponents[1]);
+                ctr++;
+            }
+
+            this.tbBucketListItems.Text = sb.ToString();
         }
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)

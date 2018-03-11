@@ -4,7 +4,8 @@
     {
         public void LogOut()
         {
-            this.token = string.Empty;
+            BaseViewModel.token = string.Empty;
+            BaseViewModel.userName = string.Empty;
         }
     }
 }

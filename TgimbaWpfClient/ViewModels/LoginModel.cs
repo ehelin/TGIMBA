@@ -23,7 +23,9 @@ namespace TgimbaWpfClient.ViewModels
             if (!string.IsNullOrEmpty(token))
             {
                 loggedIn = true;
-                this.token = token;
+
+                BaseViewModel.token = token;
+                BaseViewModel.userName = userName;
             } 
 
             return loggedIn;

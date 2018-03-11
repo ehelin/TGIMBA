@@ -5,17 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TgimbaWpfClient.Views"
              >
-    <Grid>
+    <Grid VerticalAlignment="Stretch">
         <Button x:Name="btnAdd" Content="Add"  Margin="52,10,59,156" 
             Height="24" Width="75" Click="btnAdd_Click" RenderTransformOrigin="1.086,-0.123"/>
-        <Button x:Name="btnSort" Content="Sort"  Margin="52,39,59,127" 
-            Height="24" Width="75" Click="btnSort_Click" RenderTransformOrigin="1.086,-0.123"/>
-        <Button x:Name="btnSearch" Content="Search"  Margin="52,68,59,98" 
-            Height="24" Width="75" Click="btnSearch_Click" RenderTransformOrigin="1.086,-0.123"/>
-        <Button x:Name="btnLogout" Content="Logout"  Margin="52,97,59,69" 
-            Height="24" Width="75" Click="btnLogout_Click" RenderTransformOrigin="1.086,-0.123"/>
-        <Button x:Name="btnCancel" Content="Cancel"  Margin="52,126,59,40" 
-            Height="24" Width="75" Click="btnCancel_Click" RenderTransformOrigin="1.086,-0.123"/>
-
+            <Button x:Name="btnSearch" Content="Search"  Margin="52,40,59,126" 
+                Height="24" Width="75" Click="btnSearch_Click" RenderTransformOrigin="1.086,-0.123"/>
+            <Button x:Name="btnLogout" Content="Logout"  Margin="52,69,59,97" 
+                Height="24" Width="75" Click="btnLogout_Click" RenderTransformOrigin="1.086,-0.123"/>
+            <Button x:Name="btnCancel" Content="Cancel"  Margin="52,98,59,68" 
+                Height="24" Width="75" Click="btnCancel_Click" RenderTransformOrigin="1.086,-0.123"/>
     </Grid>
 </UserControl>
