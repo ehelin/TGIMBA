@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TgimbaWpfClient.Views" 
              >
-    <Grid>
-        <TextBox x:Name="tbUserName" Height="23" Margin="37,70,34,225" TextWrapping="Wrap" Text="UserName"  Width="120"/>
-        <TextBox x:Name="tbEmail"  Height="23" Margin="37,100,34,195" TextWrapping="Wrap" Text="Email" Width="120"/>
-        <TextBox x:Name="tbPassword"  Height="23" Margin="36,130,35,165" TextWrapping="Wrap" Text="Password" Width="120"/>
-        <TextBox x:Name="tbConfirmPassword"  Height="23" Margin="37,161,34,134" TextWrapping="Wrap" Text="ConfirmPassword" Width="120"/>
+    <Grid Height="413">
+        <Label x:Name="lblUserName" Content="Username" Height="34" Margin="36,31,35,348" Width="120" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbUserName" Height="23" Margin="37,56,34,334" TextWrapping="Wrap" Text=""  Width="120"/>
+        <Label x:Name="lblEmail" Content="Email" Height="34" Margin="37,79,34,300" Width="120" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbEmail"  Height="23" Margin="37,104,34,286" TextWrapping="Wrap" Text="" Width="120"/>
+        <Label x:Name="lblPassword" Content="Password" Height="34" Margin="37,127,34,252" Width="120" HorizontalContentAlignment="Center"/>
+        <PasswordBox x:Name="tbPassword"  Height="23" Margin="37,150,34,239" Width="120"/>
+        <Label x:Name="lblConfirmPassword" Content="Confirm Password" Height="34" Margin="37,178,34,201" Width="120" HorizontalContentAlignment="Center"/>
+        <PasswordBox x:Name="tbConfirmPassword"  Height="23" Margin="37,161,34,134" Width="120"/>
         <Button x:Name="btnRegister" Content="Register" Height="24" 
                 Margin="61,195,59,99" Width="71" Click="btnRegister_Click"/>
         <Button x:Name="btnCancel" Content="Cancel" 

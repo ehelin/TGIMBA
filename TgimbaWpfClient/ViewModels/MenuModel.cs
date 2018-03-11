@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TgimbaWpfClient.ViewModels
+﻿namespace TgimbaWpfClient.ViewModels
 {
-    class MenuModel
+    public class MenuModel : BaseViewModel
     {
+        public void LogOut()
+        {
+            this.token = string.Empty;
+        }
     }
 }

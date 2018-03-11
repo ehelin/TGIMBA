@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="TgimbaEnum.cs" />
     <Compile Include="ViewModels\AddEditModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MenuModel.cs" />
     <Compile Include="ViewModels\RegistrationModel.cs" />

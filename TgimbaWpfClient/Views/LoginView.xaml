@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TgimbaWpfClient.Views"
              >
-    <Grid Height="211">
-        <TextBox x:Name="tbUserName" Height="23" Margin="37,10,34,172" TextWrapping="Wrap" Text="UserName"  Width="120"/>
-        <TextBox x:Name="tbPassword"  Height="23" Margin="37,38,34,144" TextWrapping="Wrap" Text="Password" Width="120"/>
+    <Grid Height="413">
+        <Label x:Name="lblUserName" Content="Username" Height="34" Margin="37,42,34,335" Width="120" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbUserName" Height="23" Margin="37,69,34,319" TextWrapping="Wrap" Text="" Width="120"/>
+        <Label x:Name="lblPassword" Content="Password" Height="34" Margin="37,89,34,288" Width="120" HorizontalContentAlignment="Center"/>
+        <PasswordBox x:Name="tbPassword" Height="23" Margin="37,118,34,270"  Width="120"/>
         <Button x:Name="btnLogin" Content="Login" Height="24" 
-                Margin="63,89,57,92" Width="71" Click="btnLogin_Click"/>
+                Margin="62,155,58,234" Width="71" Click="btnLogin_Click"/>
         <Button x:Name="btnRegistration" Content="Registration" 
-                Height="24" Margin="63,127,57,54" Width="71" Click="btnRegister_Click"/>
-
+                Height="24" Margin="61,193,59,196" Width="71" Click="btnRegister_Click"/>
     </Grid>
 </UserControl>

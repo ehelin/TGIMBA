@@ -5,6 +5,7 @@ namespace TgimbaWpfClient
     public partial class MainWindow : Window
     {
         public static MainWindow Instance;
+        private string token = string.Empty;
 
         public MainWindow()
         {

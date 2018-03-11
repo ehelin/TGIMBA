@@ -1,15 +1,17 @@
 ﻿using System.Windows.Controls;
+using TgimbaWpfClient.ViewModels;
 
 namespace TgimbaWpfClient.Views
 {
-    /// <summary>
-    /// Interaction logic for Menu.xaml
-    /// </summary>
     public partial class MenuView : UserControl
     {
+        private MenuModel menuModel = null;
+
         public MenuView()
         {
             InitializeComponent();
+
+            menuModel = new MenuModel();
         }
 
         private void btnAdd_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -24,6 +26,7 @@ namespace TgimbaWpfClient.Views
 
         private void btnLogout_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            menuModel.LogOut();
             MainWindow.Instance.SetCurrentPanel(UseControls.Login);
         }
 

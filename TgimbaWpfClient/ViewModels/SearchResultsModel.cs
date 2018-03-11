@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TgimbaWpfClient.ViewModels
+﻿namespace TgimbaWpfClient.ViewModels
 {
-    class SearchResultsModel
+    public class SearchResultsModel : BaseViewModel
     {
     }
 }
