@@ -3,15 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TgimbaWpfClient.Views"
+        xmlns:local="clr-namespace:TgimbaWpfClient.Views" Width="153" Height="323"
         >
-    <Grid>
+    <Grid Height="259">
         <TextBlock x:Name="textBlock"
-            Height="46" Margin="40,10,50,134" TextWrapping="Wrap" Text="AddEdit View" Width="96" TextAlignment="Center"/>
-        <Button x:Name="btnSubmit" Content="Submit"  Margin="51,89,60,77" 
-            Height="24" Width="75" Click="btnSubmit_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel"  Margin="51,127,60,39" 
-            Height="24" Width="75" Click="btnCancel_Click"/>
+            Height="46" TextWrapping="Wrap" Text="AddEdit View" Width="96" TextAlignment="Center" RenderTransformOrigin="2.594,-2.543" Margin="26,10,31,203"/>
+
+        <Label x:Name="lbName" Content="Name" Width="120" HorizontalAlignment="Center" Margin="16,29,17,156" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbName" Height="23" TextWrapping="Wrap" Text=""  Width="120" Margin="17,54,16,182"/>
+
+        <Label x:Name="lblDate" Content="Date" Height="34" Width="120" HorizontalAlignment="Center" 
+               Margin="16,75,17,150" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbDate" IsReadOnly="True" Height="23" TextWrapping="Wrap" Text=""  Width="120" Margin="16,102,17,134"/>
+
+        <Label x:Name="lblCategory" Content="Category" Height="34"  Width="120" HorizontalAlignment="Center" 
+               Margin="16,130,17,95" HorizontalContentAlignment="Center" RenderTransformOrigin="2.25,-0.235"/>
+        <ComboBox x:Name="cbCategory" HorizontalAlignment="Center" Height="24"  Width="120" Margin="16,133,17,55"/>
+
+        <CheckBox x:Name="cbAchieved" Content="Achieved" HorizontalAlignment="Center" Width="96" 
+                  Height="23" Margin="26,186,31,50" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="btnSubmit" Content="Submit"
+            Height="24" Width="75" Click="btnSubmit_Click" Margin="42,208,36,27"/>
+        <Button x:Name="btnCancel" Content="Cancel"
+            Height="24" Width="75" Click="btnCancel_Click" RenderTransformOrigin="0.347,0.5" Margin="42,236,36,-1"/>
 
     </Grid>
 </UserControl>
