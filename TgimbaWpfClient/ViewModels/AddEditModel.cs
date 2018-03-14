@@ -41,7 +41,6 @@ namespace TgimbaWpfClient.ViewModels
 
             return singleLineBucketListItem;
         }
-
         public bool AddBucketListItem(string name, string date, string category, bool achieved)
         {
             if (!BaseViewModel.IsLoggedIn())
@@ -61,10 +60,8 @@ namespace TgimbaWpfClient.ViewModels
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace GetYearToDate
 
         public bool GetDailySpreadsheet(bool isNasdaq)
         {
-            string spreadSheetContents = getDailySpreadsheet(true);
+            string spreadSheetContents = getDailySpreadsheet(isNasdaq);
             parseSpreadSheet(spreadSheetContents);
 
             return true;
@@ -35,7 +35,7 @@ namespace GetYearToDate
                 string stockSymbol = currentRow[0].Replace("\"", "");
                 decimal price = Convert.ToDecimal(currentRow[2].Replace("\"", ""));
 
-                Console.WriteLine("inserting daily price: " + date.ToString() + "-" + stockSymbol + "-" + price.ToString());
+                //Console.WriteLine("inserting daily price: " + date.ToString() + "-" + stockSymbol + "-" + price.ToString());
 
                 db.InsertDailyPrice(stockSymbol, date, price);
             }
@@ -60,15 +60,6 @@ namespace GetYearToDate
                 if (ctr > 0)
                 {
                     save(row, date);
-                    string[] stringSeparatorsV2 = new string[] { "\",\"" };
-                    string[] currentRow = row.Split(stringSeparatorsV2, StringSplitOptions.None);
-
-                    string stockSymbol = currentRow[0].Replace("\"", "");
-                    decimal price = Convert.ToDecimal(currentRow[2].Replace("\"", ""));
-
-                    Console.WriteLine("inserting daily price: " + date.ToString() + "-" + stockSymbol + "-" + price.ToString());
-
-                    db.InsertDailyPrice(stockSymbol, date, price);
                 }
 
                 ctr++;

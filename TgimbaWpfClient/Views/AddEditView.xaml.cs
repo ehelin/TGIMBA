@@ -29,7 +29,6 @@ namespace TgimbaWpfClient.Views
             this.cbCategory.SelectedIndex = 0;
             this.cbAchieved.IsChecked = false;
         }
-
         private void btnSubmit_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             string name = this.tbName.Text;
@@ -49,7 +48,6 @@ namespace TgimbaWpfClient.Views
                 clearFields();
             }
         }
-
         private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
