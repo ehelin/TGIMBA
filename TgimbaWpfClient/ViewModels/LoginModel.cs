@@ -15,8 +15,8 @@ namespace TgimbaWpfClient.ViewModels
 
         public bool Login(string userName, string passWord) {
             bool loggedIn = false;
-            string base64UserName = Utilities.EncodeClientBase64String(userName);
-            string base64Password = Utilities.EncodeClientBase64String(passWord);
+            string base64UserName = Shared.Utilities.EncodeClientBase64String(userName);
+            string base64Password = Shared.Utilities.EncodeClientBase64String(passWord);
 
             var token = service.ProcessUser(base64UserName, base64Password);
 

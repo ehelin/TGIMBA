@@ -7,15 +7,27 @@
              >
     <Grid>
         <DockPanel VerticalAlignment="Stretch">
-            <Button x:Name="button" Content="Bucket List Items" 
-                Height="24" Width="120" Click="btnBucketItemList_Click" 
-                    DockPanel.Dock="Top" />
+            <Grid DockPanel.Dock="Top">
+                <DockPanel VerticalAlignment="Stretch">
+                    <Button x:Name="button" Content="Home" 
+                    Height="24" Width="120" Click="btnBucketItemList_Click" 
+                        DockPanel.Dock="Top" />
+                    <Label Content="Search Results" HorizontalContentAlignment="Center" 
+                           DockPanel.Dock="Bottom"/>
+                </DockPanel>
+            </Grid>
             <ScrollViewer>
-                <TextBlock x:Name="tbBucketListItems"
-                    TextWrapping="Wrap" Text="" 
-                   TextAlignment="Left" HorizontalAlignment="Stretch"
-                       VerticalAlignment="Stretch"
-                       DockPanel.Dock="Bottom"/>
+                <ItemsControl Name="icBucketListItems" DockPanel.Dock="Bottom">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </ScrollViewer>
         </DockPanel>
     </Grid>

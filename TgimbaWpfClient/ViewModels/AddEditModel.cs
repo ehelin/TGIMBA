@@ -50,9 +50,9 @@ namespace TgimbaWpfClient.ViewModels
 
             string newBucketListItem = PackageBucketListItem(name, date, category, achieved);
             
-            string base64NewBucketListItem = Utilities.EncodeClientBase64String(newBucketListItem);
-            string base64UserName = Utilities.EncodeClientBase64String(BaseViewModel.userName);
-            string base64Token = Utilities.EncodeClientBase64String(BaseViewModel.token);
+            string base64NewBucketListItem = Shared.Utilities.EncodeClientBase64String(newBucketListItem);
+            string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
+            string base64Token = Shared.Utilities.EncodeClientBase64String(BaseViewModel.token);
 
             var result = service.UpsertBucketListItem(base64NewBucketListItem, base64UserName, base64Token);
 

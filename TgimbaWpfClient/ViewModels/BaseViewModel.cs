@@ -31,8 +31,8 @@ namespace TgimbaWpfClient.ViewModels
             }
 
             ITgimbaService service = new TgimbaService();
-            string base64UserName = Utilities.EncodeClientBase64String(BaseViewModel.userName);
-            string base64Token = Utilities.EncodeClientBase64String(BaseViewModel.token);
+            string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
+            string base64Token = Shared.Utilities.EncodeClientBase64String(BaseViewModel.token);
             string base64SortString = string.Empty; // TODO - edit when sorting starts
 
             string[] bucketListItems = service.GetBucketListItems(base64UserName, base64SortString, base64Token);
