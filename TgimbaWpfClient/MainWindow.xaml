@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TgimbaWpfClient"
         Title="TGIMBA" Height="550" Width="525"
         xmlns:myUserControls="clr-namespace:TgimbaWpfClient.Views">
-    <Grid>
+    <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <myUserControls:AddEditView Visibility="Hidden" x:Name="ucAditEdit" 
                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         <myUserControls:BucketListView Visibility="Hidden" x:Name="ucBucketList" 

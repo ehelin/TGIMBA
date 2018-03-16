@@ -24,7 +24,6 @@ namespace TgimbaWpfClient.Views
 
             icBucketListItems.ItemsSource = bucketListItemButtons;
         }
-
         private void btnBucketItemList_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);

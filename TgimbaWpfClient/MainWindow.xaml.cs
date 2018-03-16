@@ -13,12 +13,19 @@ namespace TgimbaWpfClient
             Instance = this;
         }
 
-        public void SetCurrentPanel(UseControls userControl)
+        public void SetCurrentPanel(UseControls userControl, string[] bucketListItem = null)
         {
             HideAllUserControls();
 
-            switch (userControl) {
-                case UseControls.AddEdit:
+            switch (userControl)
+            {
+                case UseControls.Edit:
+                    ucAditEdit.SetBucketListItem = bucketListItem;
+                    ucAditEdit.SetIsAdd = false;
+                    ucAditEdit.Visibility = Visibility.Visible;
+                    break;
+                case UseControls.Add:
+                    ucAditEdit.SetIsAdd = true;
                     ucAditEdit.Visibility = Visibility.Visible;
                     break;
                 case UseControls.BucketList:

@@ -16,7 +16,7 @@ namespace TgimbaWpfClient.Views
 
         private void btnAdd_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            MainWindow.Instance.SetCurrentPanel(UseControls.AddEdit);
+            MainWindow.Instance.SetCurrentPanel(UseControls.Add);
         }
 
         private void btnLogout_Click(object sender, System.Windows.RoutedEventArgs e)

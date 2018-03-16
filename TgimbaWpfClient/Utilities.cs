@@ -1,6 +1,4 @@
 ﻿using System.Windows.Controls;
-using TgimbaWpfClient.ViewModels;
-using System.Text;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System.Windows;
@@ -46,10 +44,12 @@ namespace TgimbaWpfClient
             Button button = (Button)sender;
             string[] bucketListItems = (string[])button.CommandParameter;
 
-            MessageBox.Show("You selected Item \'"
-                + bucketListItems[1] + "'\n"
-                + "Database Id: " + bucketListItems[5]
-                , "Bucket List View", MessageBoxButton.OK);
+            MainWindow.Instance.SetCurrentPanel(UseControls.Edit, bucketListItems);
+
+            //MessageBox.Show("You selected Item \'"
+            //    + bucketListItems[1] + "'\n"
+            //    + "Database Id: " + bucketListItems[5]
+            //    , "Bucket List View", MessageBoxButton.OK);
         }
     }
 }

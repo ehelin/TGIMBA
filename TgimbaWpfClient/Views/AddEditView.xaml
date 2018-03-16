@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TgimbaWpfClient.Views" Width="153" Height="323"
+        xmlns:local="clr-namespace:TgimbaWpfClient.Views"
         >
-    <Grid Height="259">
-        <TextBlock x:Name="textBlock"
-            Height="46" TextWrapping="Wrap" Text="AddEdit View" Width="96" TextAlignment="Center" RenderTransformOrigin="2.594,-2.543" Margin="26,10,31,203"/>
+    <Grid Height="259" HorizontalAlignment="Stretch">
+        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="AddEdit View" Width="96" TextAlignment="Center" RenderTransformOrigin="2.594,-2.543" Margin="210,10,215,228"/>
 
-        <Label x:Name="lbName" Content="Name" Width="120" HorizontalAlignment="Center" Margin="16,29,17,156" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="tbName" Height="23" TextWrapping="Wrap" Text=""  Width="120" Margin="17,54,16,182"/>
+        <Label x:Name="lbName" Content="Name" Margin="234,31,233,203" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbName" Height="23" TextWrapping="Wrap" Text="" Margin="0,54,0,182"
+                 HorizontalContentAlignment="Center"/>
 
         <Label x:Name="lblDate" Content="Date" Height="34" Width="120" HorizontalAlignment="Center" 
                Margin="16,75,17,150" HorizontalContentAlignment="Center"/>

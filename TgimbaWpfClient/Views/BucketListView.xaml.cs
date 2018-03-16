@@ -16,7 +16,6 @@ namespace TgimbaWpfClient.Views
             bucketListModel = new BucketListModel();
             
         }
-
         public void DisplayBucketListItems()
         {
             string[] bucketListItems = bucketListModel.GetBucketListItems();

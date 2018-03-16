@@ -1,4 +1,4 @@
 ﻿namespace TgimbaWpfClient
 {
-    public enum UseControls { AddEdit, BucketList, Login, Menu, Registration, SearchEntry, SeachResults };
+    public enum UseControls { Add, Edit, BucketList, Login, Menu, Registration, SearchEntry, SeachResults };
 }
