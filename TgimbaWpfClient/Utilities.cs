@@ -45,11 +45,6 @@ namespace TgimbaWpfClient
             string[] bucketListItems = (string[])button.CommandParameter;
 
             MainWindow.Instance.SetCurrentPanel(UseControls.Edit, bucketListItems);
-
-            //MessageBox.Show("You selected Item \'"
-            //    + bucketListItems[1] + "'\n"
-            //    + "Database Id: " + bucketListItems[5]
-            //    , "Bucket List View", MessageBoxButton.OK);
         }
     }
 }

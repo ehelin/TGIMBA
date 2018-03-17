@@ -39,5 +39,17 @@ namespace TgimbaWpfClient.ViewModels
 
             return bucketListItems;
         }
+        protected string[] AddUserNameToBucketListItem(string[] bucketListItem)
+        {
+            string[] bucketListItemWUserName = new string[bucketListItem.Length+1];
+
+            for (int i = 0; i < bucketListItem.Length; i++)
+            {
+                bucketListItemWUserName[i] = bucketListItem[i];
+            }
+            bucketListItemWUserName[bucketListItem.Length] = BaseViewModel.userName;
+
+            return bucketListItemWUserName;
+        }
     }
 }

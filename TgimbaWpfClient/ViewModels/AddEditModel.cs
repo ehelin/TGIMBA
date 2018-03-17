@@ -77,7 +77,8 @@ namespace TgimbaWpfClient.ViewModels
                 return false;
             }
 
-            string singleLineBucketListItem = FlattenBucketListItemArray(bucketListItem);
+            string[] bucketListItemWUserName = this.AddUserNameToBucketListItem(bucketListItem);
+            string singleLineBucketListItem = FlattenBucketListItemArray(bucketListItemWUserName);
 
             string base64NewBucketListItem = Shared.Utilities.EncodeClientBase64String(singleLineBucketListItem);
             string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
