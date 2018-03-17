@@ -15,29 +15,6 @@ namespace TgimbaWpfClient
 
         public TgimbaApi() {}
 
-        private async Task<string> Post(string subUrl, StringContent body)
-        {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = null;
-            string result = string.Empty;
-            
-            response = await client.PostAsync(host + subUrl, body).ConfigureAwait(false);
-            result = await response.Content.ReadAsStringAsync();
-
-            return result;
-        }
-        private async Task<string> Get(string subUrl)
-        {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = null;
-            string result = string.Empty;
-
-            response = await client.GetAsync(host + subUrl).ConfigureAwait(false);
-            result = await response.Content.ReadAsStringAsync();
-
-            return result;
-        }
-
         public string ProcessUser(string user, string pass)
         {
             string token = string.Empty;
@@ -62,7 +39,6 @@ namespace TgimbaWpfClient
 
             return token;
         }
-
         public bool ProcessUserRegistration(string user, string email, string password)
         {
             bool userAdded = false;
@@ -86,7 +62,6 @@ namespace TgimbaWpfClient
 
             return userAdded;
         }
-
         public string[] GetBucketListItems(string user, string sortString, string token)
         {
             string[] results = null;
@@ -96,13 +71,11 @@ namespace TgimbaWpfClient
                 StringBuilder queryString = new StringBuilder();
                 queryString.Append("?");
                 queryString.Append("encodedUserName=" + Utilities.EncodeClientBase64String(user));
-                queryString.Append("&encodedSortString=" + Utilities.EncodeClientBase64String(user));
-                queryString.Append("&encodedToken=" + Utilities.EncodeClientBase64String(user));
+                queryString.Append("&encodedSortString=" + Utilities.EncodeClientBase64String(sortString));
+                queryString.Append("&encodedToken=" + Utilities.EncodeClientBase64String(token));
                 
                 string unserializedResponse = Get("/api/BucketList" + queryString.ToString()).Result;
-          
-                results = unserializedResponse.Split(',');
-                results = JsonConvert.DeserializeObject<string[]>(results[0]);
+                results = unserializedResponse.Split(new string[] { "\",\"" }, StringSplitOptions.None);
             }
             catch (Exception e)
             {
@@ -112,7 +85,6 @@ namespace TgimbaWpfClient
 
             return results;
         }
-        
         public string[] UpsertBucketListItem(string bucketListItem, string user, string token)
         {
             string[] results = null;
@@ -128,7 +100,6 @@ namespace TgimbaWpfClient
                 string unserializedResponse = Post("api/BucketListUpsert", content).Result;
                 results = unserializedResponse.Split(',');
                 results = JsonConvert.DeserializeObject<string[]>(results[0]);
-
             }
             catch (Exception e)
             {
@@ -138,23 +109,52 @@ namespace TgimbaWpfClient
 
             return results;
         }
-        
         public string[] DeleteBucketListItem(int bucketListDbId, string user, string token)
         {
-            string[] result = null;
+            string[] results = null;
 
             try
             {
                 string base64EncodedUser = Utilities.EncodeClientBase64String(user);
                 string base64EncodedToken = Utilities.EncodeClientBase64String(token);
 
-                result = null;
+                Dictionary<string, string> values = new Dictionary<string, string>();
+                values.Add("bucketListDbId", bucketListDbId.ToString());
+                values.Add("encodedUser", Utilities.EncodeClientBase64String(user));
+                values.Add("encodedToken", Utilities.EncodeClientBase64String(token));
+                var content = new StringContent(JsonConvert.SerializeObject(values), System.Text.Encoding.UTF8, "application/json");
+
+                string unserializedResponse = Post("api/BucketListDelete", content).Result;
+                results = unserializedResponse.Split(',');
+                results = JsonConvert.DeserializeObject<string[]>(results[0]);
             }
             catch (Exception e)
             {
                 // TODO handle this error better
                 MessageBox.Show("Api Call Error -> DeleteBucketListItem()", "Api Error", MessageBoxButton.OK);
             }
+
+            return results;
+        }
+        private async Task<string> Post(string subUrl, StringContent body)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            string result = string.Empty;
+
+            response = await client.PostAsync(host + subUrl, body).ConfigureAwait(false);
+            result = await response.Content.ReadAsStringAsync();
+
+            return result;
+        }
+        private async Task<string> Get(string subUrl)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            string result = string.Empty;
+
+            response = await client.GetAsync(host + subUrl).ConfigureAwait(false);
+            result = await response.Content.ReadAsStringAsync();
 
             return result;
         }
