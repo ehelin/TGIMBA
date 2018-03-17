@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TgimbaApi.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="TgimbaEnum.cs" />
     <Compile Include="ViewModels\AddEditModel.cs" />
@@ -161,10 +162,6 @@
     <ProjectReference Include="..\CommonServiceCode\CommonServiceCode.csproj">
       <Project>{891e755d-4709-4a63-946f-557000d50bba}</Project>
       <Name>CommonServiceCode</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Shared\Shared.csproj">
-      <Project>{cf111be2-fe73-4ac4-8188-fd839737ac12}</Project>
-      <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,4 @@
-﻿using Shared;
-using Shared.Interfaces;
-using CommonServiceCode;
-
-namespace TgimbaWpfClient.ViewModels
+﻿namespace TgimbaWpfClient.ViewModels
 {
     public class BaseViewModel
     {
@@ -22,7 +18,6 @@ namespace TgimbaWpfClient.ViewModels
                 return false;
             }
         }
-
         protected static string[] GetBucketListItems()
         {
             if (!BaseViewModel.IsLoggedIn())
@@ -30,12 +25,10 @@ namespace TgimbaWpfClient.ViewModels
                 return null; // TODO - future states will require returning no items
             }
 
-            ITgimbaService service = new TgimbaService();
-            string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
-            string base64Token = Shared.Utilities.EncodeClientBase64String(BaseViewModel.token);
-            string base64SortString = string.Empty; // TODO - edit when sorting starts
+            TgimbaApi tgimbaApi = new TgimbaApi();
+            string sortString = string.Empty; // TODO - edit when sorting starts
 
-            string[] bucketListItems = service.GetBucketListItems(base64UserName, base64SortString, base64Token);
+            string[] bucketListItems = tgimbaApi.GetBucketListItems(BaseViewModel.userName, sortString, BaseViewModel.token);
 
             return bucketListItems;
         }

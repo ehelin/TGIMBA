@@ -37,7 +37,6 @@ namespace TgimbaWpfClient.Views
             cbCategory.Items.Add("Warm");
             cbCategory.Items.Add("Cold");
         }
-
         private void setUp()
         {
             clearFields();

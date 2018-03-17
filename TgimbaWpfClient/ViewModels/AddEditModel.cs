@@ -1,16 +1,12 @@
-﻿using Shared.Interfaces;
-using Shared;
-using CommonServiceCode;
-
-namespace TgimbaWpfClient.ViewModels
+﻿namespace TgimbaWpfClient.ViewModels
 {
     public class AddEditModel : BaseViewModel
     {
-        private ITgimbaService service = null;
+        private TgimbaApi tgimbaApi = null;
 
         public AddEditModel()
         {
-            service = new TgimbaService();
+            tgimbaApi = new TgimbaApi();
         }
 
         private string PackageBucketListItem(string name, string date, string category, bool achieved)
@@ -57,11 +53,11 @@ namespace TgimbaWpfClient.ViewModels
 
             string newBucketListItem = PackageBucketListItem(name, date, category, achieved);
             
-            string base64NewBucketListItem = Shared.Utilities.EncodeClientBase64String(newBucketListItem);
-            string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
-            string base64Token = Shared.Utilities.EncodeClientBase64String(BaseViewModel.token);
+            string base64NewBucketListItem = Utilities.EncodeClientBase64String(newBucketListItem);
+            string base64UserName = Utilities.EncodeClientBase64String(BaseViewModel.userName);
+            string base64Token = Utilities.EncodeClientBase64String(BaseViewModel.token);
 
-            var result = service.UpsertBucketListItem(base64NewBucketListItem, base64UserName, base64Token);
+            var result = tgimbaApi.UpsertBucketListItem(base64NewBucketListItem, base64UserName, base64Token);
 
             if (result != null && result.Length == 1 && result[0] == "TokenValid")
             {
@@ -80,11 +76,7 @@ namespace TgimbaWpfClient.ViewModels
             string[] bucketListItemWUserName = this.AddUserNameToBucketListItem(bucketListItem);
             string singleLineBucketListItem = FlattenBucketListItemArray(bucketListItemWUserName);
 
-            string base64NewBucketListItem = Shared.Utilities.EncodeClientBase64String(singleLineBucketListItem);
-            string base64UserName = Shared.Utilities.EncodeClientBase64String(BaseViewModel.userName);
-            string base64Token = Shared.Utilities.EncodeClientBase64String(BaseViewModel.token);
-
-            var result = service.UpsertBucketListItem(base64NewBucketListItem, base64UserName, base64Token);
+            var result = tgimbaApi.UpsertBucketListItem(singleLineBucketListItem, BaseViewModel.userName, BaseViewModel.token);
 
             if (result != null && result.Length == 1 && result[0] == "TokenValid")
             {

@@ -1,24 +1,18 @@
-﻿using Shared.Interfaces;
-using Shared;
-using CommonServiceCode;
-
-namespace TgimbaWpfClient.ViewModels
+﻿namespace TgimbaWpfClient.ViewModels
 {
     public class LoginModel : BaseViewModel
     {
-        private ITgimbaService service = null;
+        private TgimbaApi tgimbaApi = null;
 
         public LoginModel()
         {
-            service = new TgimbaService();
+            tgimbaApi = new TgimbaApi();
         }
 
         public bool Login(string userName, string passWord) {
             bool loggedIn = false;
-            string base64UserName = Shared.Utilities.EncodeClientBase64String(userName);
-            string base64Password = Shared.Utilities.EncodeClientBase64String(passWord);
 
-            var token = service.ProcessUser(base64UserName, base64Password);
+            var token = tgimbaApi.ProcessUser(userName, passWord);
 
             if (!string.IsNullOrEmpty(token))
             {

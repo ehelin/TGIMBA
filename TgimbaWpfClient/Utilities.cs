@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Windows.Media;
 using System.Windows;
+using System;
+using System.Linq;
 
 namespace TgimbaWpfClient
 {
     public class Utilities
     {
+        public const int REGISTRATION_VALUE_LENGTH = 8;
+        public const string EMAIL_AT_SIGN = "@";
+
         public List<Button> CreateBucketListView(string[] bucketListItems)
         {
             List<Button> bucketListItemButtons = new List<Button>();
@@ -22,6 +27,18 @@ namespace TgimbaWpfClient
             }
 
             return bucketListItemButtons;
+        }
+        public static string EncodeClientBase64String(string val)
+        {
+            string encodedString = string.Empty;
+
+            if (!string.IsNullOrEmpty(val))
+            {
+                byte[] data = System.Text.Encoding.UTF8.GetBytes(val);
+                encodedString = Convert.ToBase64String(data);
+            }
+
+            return encodedString;
         }
         private Button CreateButton(int lineNumber, string[] bucketItemComponents)
         {
@@ -45,6 +62,46 @@ namespace TgimbaWpfClient
             string[] bucketListItems = (string[])button.CommandParameter;
 
             MainWindow.Instance.SetCurrentPanel(UseControls.Edit, bucketListItems);
+        }
+        public static bool ValidUserToRegistration(string user, string email, string password)
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(user) || user.Equals("null"))
+                valid = false;
+            else if (string.IsNullOrEmpty(email) || email.Equals("null"))
+                valid = false;
+            else if (string.IsNullOrEmpty(password) || password.Equals("null"))
+                valid = false;
+            else if (user.Length < REGISTRATION_VALUE_LENGTH)
+                valid = false;
+            else if (password.Length < REGISTRATION_VALUE_LENGTH)
+                valid = false;
+            else if (!ContainsOneNumber(password))
+                valid = false;
+            else if (email.IndexOf(EMAIL_AT_SIGN) < 1)
+                valid = false;
+
+            return valid;
+        }
+        private static bool ContainsOneNumber(string password)
+        {
+            char[] charArray = password.ToArray();
+            var numberFound = false;
+
+            for (var i = 0; i < charArray.Length; i++)
+            {
+                string curChar = charArray[i].ToString();
+
+                int j;
+                if (Int32.TryParse(curChar, out j))
+                {
+                    numberFound = true;
+                    break;
+                }
+            }
+
+            return numberFound;
         }
     }
 }
