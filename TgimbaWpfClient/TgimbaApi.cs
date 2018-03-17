@@ -1,23 +1,58 @@
 ﻿using System;
 using System.Windows;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Collections.Specialized;
+using System.Text;
 
 namespace TgimbaWpfClient
 {
     public class TgimbaApi
     {
+        private string host = "https://www.tgimba.com/";
+
         public TgimbaApi() {}
+
+        private async Task<string> Post(string subUrl, StringContent body)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            string result = string.Empty;
+            
+            response = await client.PostAsync(host + subUrl, body).ConfigureAwait(false);
+            result = await response.Content.ReadAsStringAsync();
+
+            return result;
+        }
+        private async Task<string> Get(string subUrl)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            string result = string.Empty;
+
+            response = await client.GetAsync(host + subUrl).ConfigureAwait(false);
+            result = await response.Content.ReadAsStringAsync();
+
+            return result;
+        }
+
         public string ProcessUser(string user, string pass)
         {
-            string result = string.Empty;
+            string token = string.Empty;
 
             try
             {
                 string base64EncodedUser = Utilities.EncodeClientBase64String(user);
                 string base64EncodedPass = Utilities.EncodeClientBase64String(pass);
+                Dictionary<string, string> values = new Dictionary<string, string>();
+                values.Add("encodedUser", base64EncodedUser);
+                values.Add("encodedPass", base64EncodedPass);
+                var content = new StringContent(JsonConvert.SerializeObject(values), System.Text.Encoding.UTF8, "application/json");
 
-
-                
-                result = "";
+                string unserializedResponse = Post("api/account", content).Result;
+                token = JsonConvert.DeserializeObject<string>(unserializedResponse);
             }
             catch (Exception e)
             {
@@ -25,7 +60,7 @@ namespace TgimbaWpfClient
                 MessageBox.Show("Api Call Error -> ProcessUser()", "Api Error", MessageBoxButton.OK);
             }
 
-            return result;
+            return token;
         }
 
         public bool ProcessUserRegistration(string user, string email, string password)
@@ -34,11 +69,14 @@ namespace TgimbaWpfClient
 
             try
             {
-                string base64EncodedUser = Utilities.EncodeClientBase64String(user);
-                string base64EncodedEmail = Utilities.EncodeClientBase64String(email);
-                string base64EncodedPass = Utilities.EncodeClientBase64String(password);
+                Dictionary<string, string> values = new Dictionary<string, string>();
+                values.Add("encodedUser", Utilities.EncodeClientBase64String(user));
+                values.Add("encodedPass", Utilities.EncodeClientBase64String(password));
+                values.Add("encodedEmail", Utilities.EncodeClientBase64String(email));
+                var content = new StringContent(JsonConvert.SerializeObject(values), System.Text.Encoding.UTF8, "application/json");
 
-                userAdded = false;
+                string unserializedResponse = Post("api/Registration", content).Result;
+                userAdded = Convert.ToBoolean(unserializedResponse);
             }
             catch (Exception e)
             {
@@ -51,15 +89,20 @@ namespace TgimbaWpfClient
 
         public string[] GetBucketListItems(string user, string sortString, string token)
         {
-            string[] result = null;
+            string[] results = null;
 
             try
             {
-                string base64EncodedUser = Utilities.EncodeClientBase64String(user);
-                string base64EncodedSortString = Utilities.EncodeClientBase64String(sortString);
-                string base64EncodedToken = Utilities.EncodeClientBase64String(token);
-
-                result = null;
+                StringBuilder queryString = new StringBuilder();
+                queryString.Append("?");
+                queryString.Append("encodedUserName=" + Utilities.EncodeClientBase64String(user));
+                queryString.Append("&encodedSortString=" + Utilities.EncodeClientBase64String(user));
+                queryString.Append("&encodedToken=" + Utilities.EncodeClientBase64String(user));
+                
+                string unserializedResponse = Get("/api/BucketList" + queryString.ToString()).Result;
+          
+                results = unserializedResponse.Split(',');
+                results = JsonConvert.DeserializeObject<string[]>(results[0]);
             }
             catch (Exception e)
             {
@@ -67,20 +110,25 @@ namespace TgimbaWpfClient
                 MessageBox.Show("Api Call Error -> GetBucketListItems()", "Api Error", MessageBoxButton.OK);
             }
 
-            return result;
+            return results;
         }
         
         public string[] UpsertBucketListItem(string bucketListItem, string user, string token)
         {
-            string[] result = null;
+            string[] results = null;
 
             try
             {
-                string base64EncodedBucketListItem = Utilities.EncodeClientBase64String(bucketListItem);
-                string base64EncodedUser = Utilities.EncodeClientBase64String(user);
-                string base64EncodedToken = Utilities.EncodeClientBase64String(token);
+                Dictionary<string, string> values = new Dictionary<string, string>();
+                values.Add("encodedBucketListItems", Utilities.EncodeClientBase64String(bucketListItem));
+                values.Add("encodedUser", Utilities.EncodeClientBase64String(user));
+                values.Add("encodedToken", Utilities.EncodeClientBase64String(token));
+                var content = new StringContent(JsonConvert.SerializeObject(values), System.Text.Encoding.UTF8, "application/json");
 
-                result = null;
+                string unserializedResponse = Post("api/BucketListUpsert", content).Result;
+                results = unserializedResponse.Split(',');
+                results = JsonConvert.DeserializeObject<string[]>(results[0]);
+
             }
             catch (Exception e)
             {
@@ -88,7 +136,7 @@ namespace TgimbaWpfClient
                 MessageBox.Show("Api Call Error -> UpsertBucketListItem()", "Api Error", MessageBoxButton.OK);
             }
 
-            return result;
+            return results;
         }
         
         public string[] DeleteBucketListItem(int bucketListDbId, string user, string token)
