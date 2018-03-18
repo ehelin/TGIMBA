@@ -15,6 +15,12 @@ namespace TgimbaWpfClient
         public List<Button> CreateBucketListView(string[] bucketListItems)
         {
             List<Button> bucketListItemButtons = new List<Button>();
+
+            if (bucketListItems == null || bucketListItems.Length == 0 || bucketListItems[0].IndexOf("No Items") != -1)
+            {
+                return bucketListItemButtons;
+            }
+
             int lineNumber = 1;
             for (int i = 0; i < bucketListItems.Length; i++)
             {
@@ -39,6 +45,16 @@ namespace TgimbaWpfClient
             }
 
             return encodedString;
+        }
+
+        //Hack alert
+        public static string RemoveCharacaters(string value)
+        {
+            value = value.Replace("\"", "");
+            value = value.Replace("[", "");
+            value = value.Replace("]", "");
+
+            return value;
         }
         private Button CreateButton(int lineNumber, string[] bucketItemComponents)
         {

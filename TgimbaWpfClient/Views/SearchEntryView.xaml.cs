@@ -27,7 +27,6 @@ namespace TgimbaWpfClient.Views
                 MessageBox.Show("Please enter a search term", "Search", MessageBoxButton.OK);
             }
         }
-
         private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);

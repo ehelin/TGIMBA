@@ -13,6 +13,8 @@
         <Button x:Name="btnLogin" Content="Login" Height="24" 
                 Margin="62,155,58,234" Width="71" Click="btnLogin_Click"/>
         <Button x:Name="btnRegistration" Content="Registration" 
-                Height="24" Margin="61,193,59,196" Width="71" Click="btnRegister_Click"/>
+                Height="24" Margin="61,184,59,205" Width="71" Click="btnRegister_Click"/>
+        <Button x:Name="btnClose" Content="Close" 
+                Height="24" Margin="61,213,59,176" Width="71" Click="btnClose_Click"/>
     </Grid>
 </UserControl>

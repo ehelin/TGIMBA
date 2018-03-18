@@ -5,8 +5,9 @@
         xmlns:vm="clr-namespace:TgimbaWpfClient.ViewModels"
         xmlns:local="clr-namespace:TgimbaWpfClient"
         Title="TGIMBA" Height="550" Width="525"
-        xmlns:myUserControls="clr-namespace:TgimbaWpfClient.Views">
-    <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        xmlns:myUserControls="clr-namespace:TgimbaWpfClient.Views"
+         WindowStyle="None">
+    <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="500" Width="500">
         <myUserControls:AddEditView Visibility="Hidden" x:Name="ucAditEdit" 
                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         <myUserControls:BucketListView Visibility="Hidden" x:Name="ucBucketList" 

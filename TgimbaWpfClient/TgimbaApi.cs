@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using System.Collections.Specialized;
 using System.Text;
 
 namespace TgimbaWpfClient
@@ -91,7 +90,8 @@ namespace TgimbaWpfClient
 
             try
             {
-                Dictionary<string, string> values = new Dictionary<string, string>();
+                bucketListItem = Utilities.RemoveCharacaters(bucketListItem);
+                Dictionary <string, string> values = new Dictionary<string, string>();
                 values.Add("encodedBucketListItems", Utilities.EncodeClientBase64String(bucketListItem));
                 values.Add("encodedUser", Utilities.EncodeClientBase64String(user));
                 values.Add("encodedToken", Utilities.EncodeClientBase64String(token));
@@ -109,7 +109,7 @@ namespace TgimbaWpfClient
 
             return results;
         }
-        public string[] DeleteBucketListItem(int bucketListDbId, string user, string token)
+        public string[] DeleteBucketListItem(string bucketListDbId, string user, string token)
         {
             string[] results = null;
 
@@ -119,7 +119,7 @@ namespace TgimbaWpfClient
                 string base64EncodedToken = Utilities.EncodeClientBase64String(token);
 
                 Dictionary<string, string> values = new Dictionary<string, string>();
-                values.Add("bucketListDbId", bucketListDbId.ToString());
+                values.Add("bucketListDbId", bucketListDbId);
                 values.Add("encodedUser", Utilities.EncodeClientBase64String(user));
                 values.Add("encodedToken", Utilities.EncodeClientBase64String(token));
                 var content = new StringContent(JsonConvert.SerializeObject(values), System.Text.Encoding.UTF8, "application/json");

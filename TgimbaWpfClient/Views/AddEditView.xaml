@@ -5,28 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TgimbaWpfClient.Views"
         >
-    <Grid Height="259" HorizontalAlignment="Stretch">
-        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="AddEdit View" Width="96" TextAlignment="Center" RenderTransformOrigin="2.594,-2.543" Margin="210,10,215,228"/>
+    <Grid>
+        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="AddEdit View" Width="120" 
+                   TextAlignment="Center" />
 
-        <Label x:Name="lbName" Content="Name" Margin="234,31,233,203" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="tbName" Height="23" TextWrapping="Wrap" Text="" Margin="0,54,0,182"
+        <Label x:Name="lbName" Content="Name" Width="120" HorizontalContentAlignment="Center" Margin="16,11,17,230"/>
+        <TextBox x:Name="tbName" Height="23" TextWrapping="Wrap" Text="" Margin="0,33,0,211"
                  HorizontalContentAlignment="Center"/>
 
         <Label x:Name="lblDate" Content="Date" Height="34" Width="120" HorizontalAlignment="Center" 
-               Margin="16,75,17,150" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="tbDate" IsReadOnly="True" Height="23" TextWrapping="Wrap" Text=""  Width="120" Margin="16,102,17,134"/>
+               Margin="16,58,17,175" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbDate" IsReadOnly="True" Height="23" TextWrapping="Wrap" Text=""  Width="120" Margin="16,80,17,164"/>
 
         <Label x:Name="lblCategory" Content="Category" Height="34"  Width="120" HorizontalAlignment="Center" 
-               Margin="16,130,17,95" HorizontalContentAlignment="Center" RenderTransformOrigin="2.25,-0.235"/>
-        <ComboBox x:Name="cbCategory" HorizontalAlignment="Center" Height="24"  Width="120" Margin="16,133,17,55"/>
+               Margin="16,99,17,134" HorizontalContentAlignment="Center" RenderTransformOrigin="2.25,-0.235"/>
+        <ComboBox x:Name="cbCategory" HorizontalAlignment="Center" Height="24"  Width="120" Margin="16,126,17,117"/>
 
         <CheckBox x:Name="cbAchieved" Content="Achieved" HorizontalAlignment="Center" Width="96" 
-                  Height="23" Margin="26,186,31,50" HorizontalContentAlignment="Center"/>
+                  Height="23" Margin="26,155,31,89" HorizontalContentAlignment="Center"/>
 
         <Button x:Name="btnSubmit" Content="Submit"
-            Height="24" Width="75" Click="btnSubmit_Click" Margin="42,208,36,27"/>
+            Height="24" Width="75" Click="btnSubmit_Click" Margin="42,178,36,65"/>
         <Button x:Name="btnCancel" Content="Cancel"
             Height="24" Width="75" Click="btnCancel_Click" RenderTransformOrigin="0.347,0.5" Margin="42,236,36,-1"/>
+        <Button x:Name="btnDelete" Content="Delete"
+            Height="24" Width="75" Click="btnDelete_Click" Margin="42,207,36,36"/>
 
     </Grid>
 </UserControl>

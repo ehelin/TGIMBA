@@ -37,12 +37,81 @@ namespace TgimbaWpfClient.Views
             cbCategory.Items.Add("Warm");
             cbCategory.Items.Add("Cold");
         }
-        private void setUp()
+        private void btnDelete_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            clearFields();
-
+            if (!this.isAdd)
+            {
+                string dbId = Utilities.RemoveCharacaters(this.bucketListItem[5]);
+                HandleResult(addEditModel.DeleteBucketListItem(dbId));
+            }
+            else
+            {
+                MessageBox.Show("Delete is only allowed on Edit", "AddEditDelete", MessageBoxButton.OK);
+            }
+        }
+        private void btnSubmit_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
             if (isAdd)
             {
+                AddBucketListItem();
+            }
+            else
+            {
+                EditBucketListItem();
+            }
+        }
+        private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
+        }
+        private void EditBucketListItem()
+        {
+            bucketListItem[1] = this.tbName.Text;
+            bucketListItem[2] = this.tbDate.Text;
+            bucketListItem[3] = this.cbCategory.SelectedValue.ToString();
+            if (this.cbAchieved.IsChecked.Value == true)
+            {
+                bucketListItem[4] = "1";
+            }
+            else
+            {
+                bucketListItem[4] = "0";
+            }
+            bucketListItem[5] = Utilities.RemoveCharacaters(bucketListItem[5]);
+
+            HandleResult(addEditModel.EditBucketListItem(bucketListItem), false);
+        }
+        private void AddBucketListItem()
+        {
+            string name = this.tbName.Text;
+            string date = this.tbDate.Text;
+            string category = this.cbCategory.SelectedValue.ToString();
+            bool achieved = this.cbAchieved.IsChecked.Value;
+
+            HandleResult(addEditModel.AddBucketListItem(name, date, category, achieved));
+        }
+        private void HandleResult(bool goodResult, bool clearResults = true)
+        {
+            if (goodResult)
+            {
+                clearFields();
+                MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
+            }
+            else
+            {
+                // TODO - handle better
+                MessageBox.Show("Selection Failed", "AddEditDelete", MessageBoxButton.OK);
+                if (clearResults)
+                {
+                    clearFields();
+                }
+            }
+        }
+        private void setUp()
+        {
+            if (isAdd)
+            {
+                clearFields();
                 tbDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
             }
             else
@@ -62,6 +131,15 @@ namespace TgimbaWpfClient.Views
                 {
                     this.cbCategory.SelectedIndex = 2;
                 }
+
+                if (bucketListItem[4] == "1")
+                {
+                    this.cbAchieved.IsChecked = true;
+                }
+                else
+                {
+                    this.cbAchieved.IsChecked = false;
+                }
             }
         }
         private void clearFields()
@@ -70,66 +148,6 @@ namespace TgimbaWpfClient.Views
             this.tbDate.Text = string.Empty;
             this.cbCategory.SelectedIndex = 0;
             this.cbAchieved.IsChecked = false;
-        }
-        private void btnSubmit_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (isAdd)
-            {
-                AddBucketListItem();
-            }
-            else
-            {
-                EditBucketListItem();
-            }
-        }
-        private void EditBucketListItem()
-        {
-            bucketListItem[1] = this.tbName.Text;
-            bucketListItem[2] = this.tbDate.Text;
-            bucketListItem[3] = this.cbCategory.SelectedValue.ToString();
-            if (this.cbAchieved.IsChecked.Value == true)
-            {
-                bucketListItem[4] = "1";
-            }
-            else
-            {
-                bucketListItem[4] = "0";
-            }
-
-            if (addEditModel.EditBucketListItem(bucketListItem))
-            {
-                clearFields();
-                MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
-            }
-            else
-            {
-                // TODO - handle better
-                MessageBox.Show("Edit Failed", "Edit", MessageBoxButton.OK);
-                clearFields();
-            }
-        }
-        private void AddBucketListItem()
-        {
-            string name = this.tbName.Text;
-            string date = this.tbDate.Text;
-            string category = this.cbCategory.SelectedValue.ToString();
-            bool achieved = this.cbAchieved.IsChecked.Value;
-
-            if (addEditModel.AddBucketListItem(name, date, category, achieved))
-            {
-                clearFields();
-                MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
-            }
-            else
-            {
-                // TODO - handle better
-                MessageBox.Show("Add Failed", "Add", MessageBoxButton.OK);
-                clearFields();
-            }
-        }
-        private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            MainWindow.Instance.SetCurrentPanel(UseControls.BucketList);
         }
     }
 }

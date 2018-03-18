@@ -37,16 +37,18 @@ namespace TgimbaWpfClient.Views
                 }
             }
         }
-
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Instance.SetCurrentPanel(UseControls.Registration);
+        }
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
         private void clearFields()
         {
             tbUserName.Text = string.Empty;
             tbPassword.Password = string.Empty;
-        }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.Instance.SetCurrentPanel(UseControls.Registration);
         }
     }
 }

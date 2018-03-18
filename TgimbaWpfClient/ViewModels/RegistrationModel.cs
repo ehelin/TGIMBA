@@ -15,11 +15,7 @@
                 return false;
             }
 
-            string base64UserName = Utilities.EncodeClientBase64String(userName);
-            string base64Email = Utilities.EncodeClientBase64String(email);
-            string base64Password = Utilities.EncodeClientBase64String(passWord);
-
-            if (tgimbaApi.ProcessUserRegistration(base64UserName, base64Email, base64Password)) {
+            if (tgimbaApi.ProcessUserRegistration(userName, email, passWord)) {
                 return true;
             } else {
                 return false;
